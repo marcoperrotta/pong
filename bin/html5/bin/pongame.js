@@ -975,13 +975,6 @@ Main.prototype = $extend(openfl_display_Sprite.prototype,{
 			this.messageField.set_text("gioco in pausa");
 			this.spaceKey = false;
 		} else if(state == GameState.Inizio) {
-			this.messageField.set_alpha(1);
-			this.messageField.set_text("Press SPACE to start\nUse ARROW KEYS to move your platform");
-		} else if(state == GameState.Playing) {
-			this.messageField.set_alpha(1);
-			this.messageField.set_text("gioco iniziato");
-			this.platform1.set_y(this.alt / 2);
-			this.platform2.set_y(this.alt / 2);
 			this.ball.set_x(this.larg / 2);
 			this.ball.set_y(this.alt / 2);
 			var direction;
@@ -989,6 +982,13 @@ Main.prototype = $extend(openfl_display_Sprite.prototype,{
 			var randomAngle = Math.random() * Math.PI / 2 - 45;
 			this.ballMovement.x = Math.cos(randomAngle) * this.ballSpeed;
 			this.ballMovement.y = Math.sin(randomAngle) * this.ballSpeed;
+			this.messageField.set_alpha(1);
+			this.messageField.set_text("Press SPACE to start\nUse ARROW KEYS to move your platform");
+		} else if(state == GameState.Playing) {
+			this.messageField.set_alpha(1);
+			this.messageField.set_text("gioco iniziato");
+			this.platform1.set_y(this.alt / 2);
+			this.platform2.set_y(this.alt / 2);
 		}
 	}
 	,keyDown: function(event) {
@@ -1065,7 +1065,7 @@ Main.prototype = $extend(openfl_display_Sprite.prototype,{
 	}
 	,winGame: function(player) {
 		if(player == Player.Human) this.scorePlayer++; else this.scoreAI++;
-		this.setGameState(GameState.Paused);
+		this.setGameState(GameState.Inizio);
 	}
 	,bounceBall: function() {
 		var direction;

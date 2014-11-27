@@ -222,6 +222,12 @@ class Main extends Sprite
 			messageField.text = "gioco in pausa";
 			spaceKey = false;
 		}else if (state == Inizio) {
+			ball.x = larg / 2;
+			ball.y = alt / 2;
+			var direction:Int = (Math.random() > .5)?(1):( -1);
+			var randomAngle:Float = (Math.random() * Math.PI / 2) - 45;
+			ballMovement.x = Math.cos(randomAngle) * ballSpeed;
+			ballMovement.y = Math.sin(randomAngle) * ballSpeed;
 			messageField.alpha = 1;
 			messageField.text = "Press SPACE to start\nUse ARROW KEYS to move your platform";
 		}else if (state == Playing){
@@ -229,12 +235,12 @@ class Main extends Sprite
 			messageField.text = "gioco iniziato";
 			platform1.y = alt/2;
 			platform2.y = alt/2;
-			ball.x = larg / 2;
-			ball.y = alt / 2;
-			var direction:Int = (Math.random() > .5)?(1):( -1);
-			var randomAngle:Float = (Math.random() * Math.PI / 2) - 45;
-			ballMovement.x = Math.cos(randomAngle) * ballSpeed;
-			ballMovement.y = Math.sin(randomAngle) * ballSpeed;
+			//ball.x = larg / 2;
+			//ball.y = alt / 2;
+			//var direction:Int = (Math.random() > .5)?(1):( -1);
+			//var randomAngle:Float = (Math.random() * Math.PI / 2) - 45;
+			//ballMovement.x = Math.cos(randomAngle) * ballSpeed;
+			//ballMovement.y = Math.sin(randomAngle) * ballSpeed;
 		}
 	}
 			
@@ -383,7 +389,7 @@ class Main extends Sprite
 	} else {
 		scoreAI++;
 	}
-	setGameState(Paused);
+	setGameState(Inizio);
 }
 	
 	
