@@ -1023,11 +1023,11 @@ Main.prototype = $extend(openfl_display_Sprite.prototype,{
 				_g1.set_y(_g1.get_y() + this.platformSpeed);
 			}
 			if(this.spaceKey) this.setGameState(GameState.Paused);
-			if(this.ball.get_x() > this.larg - this.larg / 2 && this.ball.get_y() > this.platform2.get_y() + 70) {
+			if(this.ball.get_x() > this.larg - this.larg / 2 && this.ball.get_y() > this.platform2.get_y()) {
 				var _g2 = this.platform2;
 				_g2.set_y(_g2.get_y() + this.platformSpeed);
 			}
-			if(this.ball.get_x() > this.larg - this.larg / 2 && this.ball.get_y() < this.platform2.get_y() + 30) {
+			if(this.ball.get_x() > this.larg - this.larg / 2 && this.ball.get_y() < this.platform2.get_y() + this.alt / 10) {
 				var _g3 = this.platform2;
 				_g3.set_y(_g3.get_y() - this.platformSpeed);
 			}

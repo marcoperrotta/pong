@@ -629,9 +629,7 @@ Void Main_obj::everyFrame( ::openfl::_v2::events::Event event){
 						HX_STACK_LINE(342)
 						Float _g6 = __this->platform2->get_y();		HX_STACK_VAR(_g6,"_g6");
 						HX_STACK_LINE(342)
-						Float _g7 = (_g6 + (int)70);		HX_STACK_VAR(_g7,"_g7");
-						HX_STACK_LINE(342)
-						return (_g5 > _g7);
+						return (_g5 > _g6);
 					}
 					return null();
 				}
@@ -641,66 +639,66 @@ Void Main_obj::everyFrame( ::openfl::_v2::events::Event event){
 				HX_STACK_LINE(343)
 				::Platform _g = this->platform2;		HX_STACK_VAR(_g,"_g");
 				HX_STACK_LINE(343)
-				Float _g8 = _g->get_y();		HX_STACK_VAR(_g8,"_g8");
+				Float _g7 = _g->get_y();		HX_STACK_VAR(_g7,"_g7");
 				HX_STACK_LINE(343)
-				Float _g9 = (_g8 + this->platformSpeed);		HX_STACK_VAR(_g9,"_g9");
+				Float _g8 = (_g7 + this->platformSpeed);		HX_STACK_VAR(_g8,"_g8");
 				HX_STACK_LINE(343)
-				_g->set_y(_g9);
+				_g->set_y(_g8);
 			}
 			HX_STACK_LINE(345)
-			Float _g10 = this->ball->get_x();		HX_STACK_VAR(_g10,"_g10");
+			Float _g9 = this->ball->get_x();		HX_STACK_VAR(_g9,"_g9");
 			struct _Function_2_2{
 				inline static bool Block( hx::ObjectPtr< ::Main_obj > __this){
 					HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","Main.hx",345,0x087e5c05)
 					{
 						HX_STACK_LINE(345)
-						Float _g11 = __this->ball->get_y();		HX_STACK_VAR(_g11,"_g11");
+						Float _g10 = __this->ball->get_y();		HX_STACK_VAR(_g10,"_g10");
 						HX_STACK_LINE(345)
-						Float _g12 = __this->platform2->get_y();		HX_STACK_VAR(_g12,"_g12");
+						Float _g11 = __this->platform2->get_y();		HX_STACK_VAR(_g11,"_g11");
 						HX_STACK_LINE(345)
-						Float _g13 = (_g12 + (int)30);		HX_STACK_VAR(_g13,"_g13");
+						Float _g12 = (_g11 + (Float(__this->alt) / Float((int)10)));		HX_STACK_VAR(_g12,"_g12");
 						HX_STACK_LINE(345)
-						return (_g11 < _g13);
+						return (_g10 < _g12);
 					}
 					return null();
 				}
 			};
 			HX_STACK_LINE(345)
-			if (((  (((_g10 > (this->larg - (Float(this->larg) / Float((int)2)))))) ? bool(_Function_2_2::Block(this)) : bool(false) ))){
+			if (((  (((_g9 > (this->larg - (Float(this->larg) / Float((int)2)))))) ? bool(_Function_2_2::Block(this)) : bool(false) ))){
 				HX_STACK_LINE(346)
 				::Platform _g = this->platform2;		HX_STACK_VAR(_g,"_g");
 				HX_STACK_LINE(346)
-				Float _g14 = _g->get_y();		HX_STACK_VAR(_g14,"_g14");
+				Float _g13 = _g->get_y();		HX_STACK_VAR(_g13,"_g13");
 				HX_STACK_LINE(346)
-				Float _g15 = (_g14 - this->platformSpeed);		HX_STACK_VAR(_g15,"_g15");
+				Float _g14 = (_g13 - this->platformSpeed);		HX_STACK_VAR(_g14,"_g14");
 				HX_STACK_LINE(346)
-				_g->set_y(_g15);
+				_g->set_y(_g14);
 			}
 			HX_STACK_LINE(349)
-			Float _g16 = this->platform1->get_y();		HX_STACK_VAR(_g16,"_g16");
+			Float _g15 = this->platform1->get_y();		HX_STACK_VAR(_g15,"_g15");
 			HX_STACK_LINE(349)
-			if (((_g16 < (int)0))){
+			if (((_g15 < (int)0))){
 				HX_STACK_LINE(349)
 				this->platform1->set_y((int)0);
 			}
 			HX_STACK_LINE(350)
-			Float _g17 = this->platform1->get_y();		HX_STACK_VAR(_g17,"_g17");
+			Float _g16 = this->platform1->get_y();		HX_STACK_VAR(_g16,"_g16");
 			HX_STACK_LINE(350)
-			if (((_g17 > (this->alt - (Float(this->alt) / Float((int)10)))))){
+			if (((_g16 > (this->alt - (Float(this->alt) / Float((int)10)))))){
 				HX_STACK_LINE(350)
 				this->platform1->set_y((this->alt - (Float(this->alt) / Float((int)10))));
 			}
 			HX_STACK_LINE(352)
-			Float _g18 = this->platform2->get_y();		HX_STACK_VAR(_g18,"_g18");
+			Float _g17 = this->platform2->get_y();		HX_STACK_VAR(_g17,"_g17");
 			HX_STACK_LINE(352)
-			if (((_g18 < (int)0))){
+			if (((_g17 < (int)0))){
 				HX_STACK_LINE(352)
 				this->platform2->set_y((int)0);
 			}
 			HX_STACK_LINE(353)
-			Float _g19 = this->platform2->get_y();		HX_STACK_VAR(_g19,"_g19");
+			Float _g18 = this->platform2->get_y();		HX_STACK_VAR(_g18,"_g18");
 			HX_STACK_LINE(353)
-			if (((_g19 > this->alt))){
+			if (((_g18 > this->alt))){
 				HX_STACK_LINE(353)
 				this->platform2->set_y(this->alt);
 			}
@@ -709,31 +707,31 @@ Void Main_obj::everyFrame( ::openfl::_v2::events::Event event){
 				HX_STACK_LINE(355)
 				::Ball _g = this->ball;		HX_STACK_VAR(_g,"_g");
 				HX_STACK_LINE(355)
-				Float _g20 = _g->get_x();		HX_STACK_VAR(_g20,"_g20");
+				Float _g19 = _g->get_x();		HX_STACK_VAR(_g19,"_g19");
 				HX_STACK_LINE(355)
-				Float _g21 = (_g20 + this->ballMovement->x);		HX_STACK_VAR(_g21,"_g21");
+				Float _g20 = (_g19 + this->ballMovement->x);		HX_STACK_VAR(_g20,"_g20");
 				HX_STACK_LINE(355)
-				_g->set_x(_g21);
+				_g->set_x(_g20);
 			}
 			HX_STACK_LINE(356)
 			{
 				HX_STACK_LINE(356)
 				::Ball _g = this->ball;		HX_STACK_VAR(_g,"_g");
 				HX_STACK_LINE(356)
-				Float _g22 = _g->get_y();		HX_STACK_VAR(_g22,"_g22");
+				Float _g21 = _g->get_y();		HX_STACK_VAR(_g21,"_g21");
 				HX_STACK_LINE(356)
-				Float _g23 = (_g22 + this->ballMovement->y);		HX_STACK_VAR(_g23,"_g23");
+				Float _g22 = (_g21 + this->ballMovement->y);		HX_STACK_VAR(_g22,"_g22");
 				HX_STACK_LINE(356)
-				_g->set_y(_g23);
+				_g->set_y(_g22);
 			}
 			struct _Function_2_3{
 				inline static bool Block( hx::ObjectPtr< ::Main_obj > __this){
 					HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","Main.hx",358,0x087e5c05)
 					{
 						HX_STACK_LINE(358)
-						Float _g24 = __this->ball->get_x();		HX_STACK_VAR(_g24,"_g24");
+						Float _g23 = __this->ball->get_x();		HX_STACK_VAR(_g23,"_g23");
 						HX_STACK_LINE(358)
-						return (_g24 < ((Float(__this->larg) / Float((int)50)) + (Float(__this->larg) / Float((int)50))));
+						return (_g23 < ((Float(__this->larg) / Float((int)50)) + (Float(__this->larg) / Float((int)50))));
 					}
 					return null();
 				}
@@ -743,11 +741,11 @@ Void Main_obj::everyFrame( ::openfl::_v2::events::Event event){
 					HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","Main.hx",358,0x087e5c05)
 					{
 						HX_STACK_LINE(358)
-						Float _g25 = __this->ball->get_y();		HX_STACK_VAR(_g25,"_g25");
+						Float _g24 = __this->ball->get_y();		HX_STACK_VAR(_g24,"_g24");
 						HX_STACK_LINE(358)
-						Float _g26 = __this->platform1->get_y();		HX_STACK_VAR(_g26,"_g26");
+						Float _g25 = __this->platform1->get_y();		HX_STACK_VAR(_g25,"_g25");
 						HX_STACK_LINE(358)
-						return (_g25 >= _g26);
+						return (_g24 >= _g25);
 					}
 					return null();
 				}
@@ -757,13 +755,13 @@ Void Main_obj::everyFrame( ::openfl::_v2::events::Event event){
 					HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","Main.hx",358,0x087e5c05)
 					{
 						HX_STACK_LINE(358)
-						Float _g27 = __this->ball->get_y();		HX_STACK_VAR(_g27,"_g27");
+						Float _g26 = __this->ball->get_y();		HX_STACK_VAR(_g26,"_g26");
 						HX_STACK_LINE(358)
-						Float _g28 = __this->platform1->get_y();		HX_STACK_VAR(_g28,"_g28");
+						Float _g27 = __this->platform1->get_y();		HX_STACK_VAR(_g27,"_g27");
 						HX_STACK_LINE(358)
-						Float _g29 = (_g28 + (Float(__this->alt) / Float((int)10)));		HX_STACK_VAR(_g29,"_g29");
+						Float _g28 = (_g27 + (Float(__this->alt) / Float((int)10)));		HX_STACK_VAR(_g28,"_g28");
 						HX_STACK_LINE(358)
-						return (_g27 <= _g29);
+						return (_g26 <= _g28);
 					}
 					return null();
 				}
@@ -780,9 +778,9 @@ Void Main_obj::everyFrame( ::openfl::_v2::events::Event event){
 					HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","Main.hx",362,0x087e5c05)
 					{
 						HX_STACK_LINE(362)
-						Float _g30 = __this->ball->get_x();		HX_STACK_VAR(_g30,"_g30");
+						Float _g29 = __this->ball->get_x();		HX_STACK_VAR(_g29,"_g29");
 						HX_STACK_LINE(362)
-						return (_g30 > ((__this->larg - (Float(__this->larg) / Float((int)50))) - (Float(__this->larg) / Float((int)50))));
+						return (_g29 > ((__this->larg - (Float(__this->larg) / Float((int)50))) - (Float(__this->larg) / Float((int)50))));
 					}
 					return null();
 				}
@@ -792,11 +790,11 @@ Void Main_obj::everyFrame( ::openfl::_v2::events::Event event){
 					HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","Main.hx",362,0x087e5c05)
 					{
 						HX_STACK_LINE(362)
-						Float _g31 = __this->ball->get_y();		HX_STACK_VAR(_g31,"_g31");
+						Float _g30 = __this->ball->get_y();		HX_STACK_VAR(_g30,"_g30");
 						HX_STACK_LINE(362)
-						Float _g32 = __this->platform2->get_y();		HX_STACK_VAR(_g32,"_g32");
+						Float _g31 = __this->platform2->get_y();		HX_STACK_VAR(_g31,"_g31");
 						HX_STACK_LINE(362)
-						return (_g31 >= _g32);
+						return (_g30 >= _g31);
 					}
 					return null();
 				}
@@ -806,13 +804,13 @@ Void Main_obj::everyFrame( ::openfl::_v2::events::Event event){
 					HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","Main.hx",362,0x087e5c05)
 					{
 						HX_STACK_LINE(362)
-						Float _g33 = __this->ball->get_y();		HX_STACK_VAR(_g33,"_g33");
+						Float _g32 = __this->ball->get_y();		HX_STACK_VAR(_g32,"_g32");
 						HX_STACK_LINE(362)
-						Float _g34 = __this->platform2->get_y();		HX_STACK_VAR(_g34,"_g34");
+						Float _g33 = __this->platform2->get_y();		HX_STACK_VAR(_g33,"_g33");
 						HX_STACK_LINE(362)
-						Float _g35 = (_g34 + (Float(__this->alt) / Float((int)10)));		HX_STACK_VAR(_g35,"_g35");
+						Float _g34 = (_g33 + (Float(__this->alt) / Float((int)10)));		HX_STACK_VAR(_g34,"_g34");
 						HX_STACK_LINE(362)
-						return (_g33 <= _g35);
+						return (_g32 <= _g34);
 					}
 					return null();
 				}
@@ -825,28 +823,28 @@ Void Main_obj::everyFrame( ::openfl::_v2::events::Event event){
 				this->ball->set_x((this->larg - (Float(this->larg) / Float((int)50))));
 			}
 			HX_STACK_LINE(367)
-			Float _g36 = this->ball->get_y();		HX_STACK_VAR(_g36,"_g36");
+			Float _g35 = this->ball->get_y();		HX_STACK_VAR(_g35,"_g35");
 			struct _Function_2_9{
 				inline static bool Block( hx::ObjectPtr< ::Main_obj > __this){
 					HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","Main.hx",367,0x087e5c05)
 					{
 						HX_STACK_LINE(367)
-						Float _g37 = __this->ball->get_y();		HX_STACK_VAR(_g37,"_g37");
+						Float _g36 = __this->ball->get_y();		HX_STACK_VAR(_g36,"_g36");
 						HX_STACK_LINE(367)
-						return (_g37 > (__this->alt - (Float(__this->larg) / Float((int)50))));
+						return (_g36 > (__this->alt - (Float(__this->larg) / Float((int)50))));
 					}
 					return null();
 				}
 			};
 			HX_STACK_LINE(367)
-			if (((  ((!(((_g36 < (Float(this->larg) / Float((int)50))))))) ? bool(_Function_2_9::Block(this)) : bool(true) ))){
+			if (((  ((!(((_g35 < (Float(this->larg) / Float((int)50))))))) ? bool(_Function_2_9::Block(this)) : bool(true) ))){
 				HX_STACK_LINE(367)
 				hx::MultEq(this->ballMovement->y,(int)-1);
 			}
 			HX_STACK_LINE(369)
-			Float _g38 = this->ball->get_x();		HX_STACK_VAR(_g38,"_g38");
+			Float _g37 = this->ball->get_x();		HX_STACK_VAR(_g37,"_g37");
 			HX_STACK_LINE(369)
-			if (((_g38 < (Float(this->larg) / Float((int)50))))){
+			if (((_g37 < (Float(this->larg) / Float((int)50))))){
 				HX_STACK_LINE(370)
 				this->messageField->set_alpha((int)1);
 				HX_STACK_LINE(371)
@@ -855,9 +853,9 @@ Void Main_obj::everyFrame( ::openfl::_v2::events::Event event){
 				this->winGame(::Player_obj::AI);
 			}
 			HX_STACK_LINE(374)
-			Float _g39 = this->ball->get_x();		HX_STACK_VAR(_g39,"_g39");
+			Float _g38 = this->ball->get_x();		HX_STACK_VAR(_g38,"_g38");
 			HX_STACK_LINE(374)
-			if (((_g39 > (this->larg - (Float(this->larg) / Float((int)50)))))){
+			if (((_g38 > (this->larg - (Float(this->larg) / Float((int)50)))))){
 				HX_STACK_LINE(375)
 				this->messageField->set_alpha((int)1);
 				HX_STACK_LINE(376)

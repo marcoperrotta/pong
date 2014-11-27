@@ -339,10 +339,10 @@ class Main extends Sprite
 				setGameState(Paused);
 			}
 			//AI platform movement
-			if (ball.x > (larg - larg/2) && ball.y > platform2.y + 70) {	//va giù
+			if (ball.x > (larg - larg/2) && ball.y > platform2.y) {	//va giù +70
 				platform2.y += platformSpeed;
 			}
-			if (ball.x > (larg - larg/2) && ball.y < platform2.y + 30) {	//va su
+			if (ball.x > (larg - larg/2) && ball.y < platform2.y +alt/10) {	//va su +30
 				platform2.y -= platformSpeed;
 			}
 			// player platform limits
