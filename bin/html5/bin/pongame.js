@@ -931,7 +931,7 @@ Main.prototype = $extend(openfl_display_Sprite.prototype,{
 		this.pause.set_x(this.larg / 4);
 		this.pause.set_x(this.altt - this.alt / 2);
 		this.pause.selectable = false;
-		var scoreFormat = new openfl_text_TextFormat("Verdana",24,16711680,true);
+		var scoreFormat = new openfl_text_TextFormat("Verdana",24,16711680);
 		scoreFormat.align = openfl_text_TextFormatAlign.CENTER;
 		this.scoreField = new openfl_text_TextField();
 		this.addChild(this.scoreField);
@@ -975,6 +975,8 @@ Main.prototype = $extend(openfl_display_Sprite.prototype,{
 			this.messageField.set_text("gioco in pausa");
 			this.spaceKey = false;
 		} else if(state == GameState.Inizio) {
+			this.platform1.set_y(this.alt / 2);
+			this.platform2.set_y(this.alt / 2);
 			this.ball.set_x(this.larg / 2);
 			this.ball.set_y(this.alt / 2);
 			var direction;
@@ -987,8 +989,6 @@ Main.prototype = $extend(openfl_display_Sprite.prototype,{
 		} else if(state == GameState.Playing) {
 			this.messageField.set_alpha(1);
 			this.messageField.set_text("gioco iniziato");
-			this.platform1.set_y(this.alt / 2);
-			this.platform2.set_y(this.alt / 2);
 		}
 	}
 	,keyDown: function(event) {

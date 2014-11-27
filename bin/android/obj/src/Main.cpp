@@ -128,9 +128,9 @@ HX_STACK_THIS(this)
 	this->alt = _Function_1_1::Block();
 	HX_STACK_LINE(54)
 	this->larg = ::openfl::_v2::Lib_obj::get_current()->get_stage()->get_stageWidth();
-	HX_STACK_LINE(414)
+	HX_STACK_LINE(416)
 	super::__construct();
-	HX_STACK_LINE(415)
+	HX_STACK_LINE(417)
 	this->addEventListener(::openfl::_v2::events::Event_obj::ADDED_TO_STAGE,this->added_dyn(),null(),null(),null());
 }
 ;
@@ -265,7 +265,7 @@ Void Main_obj::init( ){
 		HX_STACK_LINE(165)
 		this->pause->set_selectable(false);
 		HX_STACK_LINE(169)
-		::openfl::_v2::text::TextFormat scoreFormat = ::openfl::_v2::text::TextFormat_obj::__new(HX_CSTRING("Verdana"),(int)24,(int)16711680,true,null(),null(),null(),null(),null(),null(),null(),null(),null());		HX_STACK_VAR(scoreFormat,"scoreFormat");
+		::openfl::_v2::text::TextFormat scoreFormat = ::openfl::_v2::text::TextFormat_obj::__new(HX_CSTRING("Verdana"),(int)24,(int)16711680,null(),null(),null(),null(),null(),null(),null(),null(),null(),null());		HX_STACK_VAR(scoreFormat,"scoreFormat");
 		HX_STACK_LINE(170)
 		scoreFormat->align = ::openfl::_v2::text::TextFormatAlign_obj::CENTER;
 		HX_STACK_LINE(172)
@@ -369,58 +369,58 @@ Void Main_obj::setGameState( ::GameState state){
 			HX_STACK_LINE(224)
 			if (((state == ::GameState_obj::Inizio))){
 				HX_STACK_LINE(225)
-				this->ball->set_x((Float(this->larg) / Float((int)2)));
+				this->platform1->set_y((Float(this->alt) / Float((int)2)));
 				HX_STACK_LINE(226)
+				this->platform2->set_y((Float(this->alt) / Float((int)2)));
+				HX_STACK_LINE(227)
+				this->ball->set_x((Float(this->larg) / Float((int)2)));
+				HX_STACK_LINE(228)
 				this->ball->set_y((Float(this->alt) / Float((int)2)));
-				HX_STACK_LINE(227)
+				HX_STACK_LINE(229)
 				Float _g = ::Math_obj::random();		HX_STACK_VAR(_g,"_g");
-				HX_STACK_LINE(227)
+				HX_STACK_LINE(229)
 				int direction;		HX_STACK_VAR(direction,"direction");
-				HX_STACK_LINE(227)
+				HX_STACK_LINE(229)
 				if (((_g > .5))){
-					HX_STACK_LINE(227)
+					HX_STACK_LINE(229)
 					direction = (int)1;
 				}
 				else{
-					HX_STACK_LINE(227)
+					HX_STACK_LINE(229)
 					direction = (int)-1;
 				}
-				HX_STACK_LINE(228)
+				HX_STACK_LINE(230)
 				Float _g1 = ::Math_obj::random();		HX_STACK_VAR(_g1,"_g1");
-				HX_STACK_LINE(228)
+				HX_STACK_LINE(230)
 				Float _g2 = (_g1 * ::Math_obj::PI);		HX_STACK_VAR(_g2,"_g2");
-				HX_STACK_LINE(228)
+				HX_STACK_LINE(230)
 				Float _g3 = (Float(_g2) / Float((int)2));		HX_STACK_VAR(_g3,"_g3");
-				HX_STACK_LINE(228)
+				HX_STACK_LINE(230)
 				Float randomAngle = (_g3 - (int)45);		HX_STACK_VAR(randomAngle,"randomAngle");
-				HX_STACK_LINE(229)
-				Float _g4 = ::Math_obj::cos(randomAngle);		HX_STACK_VAR(_g4,"_g4");
-				HX_STACK_LINE(229)
-				Float _g5 = (_g4 * this->ballSpeed);		HX_STACK_VAR(_g5,"_g5");
-				HX_STACK_LINE(229)
-				this->ballMovement->x = _g5;
-				HX_STACK_LINE(230)
-				Float _g6 = ::Math_obj::sin(randomAngle);		HX_STACK_VAR(_g6,"_g6");
-				HX_STACK_LINE(230)
-				Float _g7 = (_g6 * this->ballSpeed);		HX_STACK_VAR(_g7,"_g7");
-				HX_STACK_LINE(230)
-				this->ballMovement->y = _g7;
 				HX_STACK_LINE(231)
-				this->messageField->set_alpha((int)1);
+				Float _g4 = ::Math_obj::cos(randomAngle);		HX_STACK_VAR(_g4,"_g4");
+				HX_STACK_LINE(231)
+				Float _g5 = (_g4 * this->ballSpeed);		HX_STACK_VAR(_g5,"_g5");
+				HX_STACK_LINE(231)
+				this->ballMovement->x = _g5;
 				HX_STACK_LINE(232)
+				Float _g6 = ::Math_obj::sin(randomAngle);		HX_STACK_VAR(_g6,"_g6");
+				HX_STACK_LINE(232)
+				Float _g7 = (_g6 * this->ballSpeed);		HX_STACK_VAR(_g7,"_g7");
+				HX_STACK_LINE(232)
+				this->ballMovement->y = _g7;
+				HX_STACK_LINE(233)
+				this->messageField->set_alpha((int)1);
+				HX_STACK_LINE(234)
 				this->messageField->set_text(HX_CSTRING("Press SPACE to start\nUse ARROW KEYS to move your platform"));
 			}
 			else{
-				HX_STACK_LINE(233)
+				HX_STACK_LINE(235)
 				if (((state == ::GameState_obj::Playing))){
-					HX_STACK_LINE(234)
-					this->messageField->set_alpha((int)1);
-					HX_STACK_LINE(235)
-					this->messageField->set_text(HX_CSTRING("gioco iniziato"));
 					HX_STACK_LINE(236)
-					this->platform1->set_y((Float(this->alt) / Float((int)2)));
+					this->messageField->set_alpha((int)1);
 					HX_STACK_LINE(237)
-					this->platform2->set_y((Float(this->alt) / Float((int)2)));
+					this->messageField->set_text(HX_CSTRING("gioco iniziato"));
 				}
 			}
 		}
@@ -433,30 +433,30 @@ HX_DEFINE_DYNAMIC_FUNC1(Main_obj,setGameState,(void))
 
 Void Main_obj::keyDown( ::openfl::_v2::events::KeyboardEvent event){
 {
-		HX_STACK_FRAME("Main","keyDown",0x0078d08c,"Main.keyDown","Main.hx",249,0x087e5c05)
+		HX_STACK_FRAME("Main","keyDown",0x0078d08c,"Main.keyDown","Main.hx",251,0x087e5c05)
 		HX_STACK_THIS(this)
 		HX_STACK_ARG(event,"event")
-		HX_STACK_LINE(249)
+		HX_STACK_LINE(251)
 		if (((bool(((bool((this->currentGameState == ::GameState_obj::Paused)) || bool((this->currentGameState == ::GameState_obj::Inizio))))) && bool((event->keyCode == (int)32))))){
-			HX_STACK_LINE(250)
+			HX_STACK_LINE(252)
 			this->setGameState(::GameState_obj::Playing);
 		}
 		else{
-			HX_STACK_LINE(251)
+			HX_STACK_LINE(253)
 			if (((event->keyCode == (int)38))){
-				HX_STACK_LINE(252)
+				HX_STACK_LINE(254)
 				this->arrowKeyUp = true;
 			}
 			else{
-				HX_STACK_LINE(253)
+				HX_STACK_LINE(255)
 				if (((event->keyCode == (int)40))){
-					HX_STACK_LINE(254)
+					HX_STACK_LINE(256)
 					this->arrowKeyDown = true;
 				}
 				else{
-					HX_STACK_LINE(255)
+					HX_STACK_LINE(257)
 					if (((event->keyCode == (int)32))){
-						HX_STACK_LINE(256)
+						HX_STACK_LINE(258)
 						this->spaceKey = true;
 					}
 				}
@@ -471,16 +471,16 @@ HX_DEFINE_DYNAMIC_FUNC1(Main_obj,keyDown,(void))
 
 Void Main_obj::onTouchMoveDown( ::openfl::_v2::events::TouchEvent e){
 {
-		HX_STACK_FRAME("Main","onTouchMoveDown",0xa8bdc03e,"Main.onTouchMoveDown","Main.hx",261,0x087e5c05)
+		HX_STACK_FRAME("Main","onTouchMoveDown",0xa8bdc03e,"Main.onTouchMoveDown","Main.hx",263,0x087e5c05)
 		HX_STACK_THIS(this)
 		HX_STACK_ARG(e,"e")
-		HX_STACK_LINE(261)
+		HX_STACK_LINE(263)
 		if (((bool((this->currentGameState == ::GameState_obj::Paused)) || bool((this->currentGameState == ::GameState_obj::Inizio))))){
-			HX_STACK_LINE(262)
+			HX_STACK_LINE(264)
 			this->setGameState(::GameState_obj::Playing);
 		}
 		else{
-			HX_STACK_LINE(265)
+			HX_STACK_LINE(267)
 			this->touchDown = true;
 		}
 	}
@@ -492,16 +492,16 @@ HX_DEFINE_DYNAMIC_FUNC1(Main_obj,onTouchMoveDown,(void))
 
 Void Main_obj::onTouchMoveUp( ::openfl::_v2::events::TouchEvent e){
 {
-		HX_STACK_FRAME("Main","onTouchMoveUp",0x6d433f37,"Main.onTouchMoveUp","Main.hx",270,0x087e5c05)
+		HX_STACK_FRAME("Main","onTouchMoveUp",0x6d433f37,"Main.onTouchMoveUp","Main.hx",272,0x087e5c05)
 		HX_STACK_THIS(this)
 		HX_STACK_ARG(e,"e")
-		HX_STACK_LINE(270)
+		HX_STACK_LINE(272)
 		if (((bool((this->currentGameState == ::GameState_obj::Paused)) || bool((this->currentGameState == ::GameState_obj::Inizio))))){
-			HX_STACK_LINE(271)
+			HX_STACK_LINE(273)
 			this->setGameState(::GameState_obj::Playing);
 		}
 		else{
-			HX_STACK_LINE(274)
+			HX_STACK_LINE(276)
 			this->touchUp = true;
 		}
 	}
@@ -513,10 +513,10 @@ HX_DEFINE_DYNAMIC_FUNC1(Main_obj,onTouchMoveUp,(void))
 
 Void Main_obj::onTouchEndDown( ::openfl::_v2::events::TouchEvent e){
 {
-		HX_STACK_FRAME("Main","onTouchEndDown",0x079a4412,"Main.onTouchEndDown","Main.hx",279,0x087e5c05)
+		HX_STACK_FRAME("Main","onTouchEndDown",0x079a4412,"Main.onTouchEndDown","Main.hx",281,0x087e5c05)
 		HX_STACK_THIS(this)
 		HX_STACK_ARG(e,"e")
-		HX_STACK_LINE(279)
+		HX_STACK_LINE(281)
 		this->touchDown = false;
 	}
 return null();
@@ -527,10 +527,10 @@ HX_DEFINE_DYNAMIC_FUNC1(Main_obj,onTouchEndDown,(void))
 
 Void Main_obj::onTouchEndUp( ::openfl::_v2::events::TouchEvent e){
 {
-		HX_STACK_FRAME("Main","onTouchEndUp",0x6929660b,"Main.onTouchEndUp","Main.hx",283,0x087e5c05)
+		HX_STACK_FRAME("Main","onTouchEndUp",0x6929660b,"Main.onTouchEndUp","Main.hx",285,0x087e5c05)
 		HX_STACK_THIS(this)
 		HX_STACK_ARG(e,"e")
-		HX_STACK_LINE(283)
+		HX_STACK_LINE(285)
 		this->touchUp = false;
 	}
 return null();
@@ -541,16 +541,16 @@ HX_DEFINE_DYNAMIC_FUNC1(Main_obj,onTouchEndUp,(void))
 
 Void Main_obj::onTouchBeginPause( ::openfl::_v2::events::TouchEvent e){
 {
-		HX_STACK_FRAME("Main","onTouchBeginPause",0x52a8e4f8,"Main.onTouchBeginPause","Main.hx",287,0x087e5c05)
+		HX_STACK_FRAME("Main","onTouchBeginPause",0x52a8e4f8,"Main.onTouchBeginPause","Main.hx",289,0x087e5c05)
 		HX_STACK_THIS(this)
 		HX_STACK_ARG(e,"e")
-		HX_STACK_LINE(287)
+		HX_STACK_LINE(289)
 		if (((this->currentGameState == ::GameState_obj::Playing))){
-			HX_STACK_LINE(288)
+			HX_STACK_LINE(290)
 			this->setGameState(::GameState_obj::Paused);
 		}
 		else{
-			HX_STACK_LINE(289)
+			HX_STACK_LINE(291)
 			this->setGameState(::GameState_obj::Playing);
 		}
 	}
@@ -562,18 +562,18 @@ HX_DEFINE_DYNAMIC_FUNC1(Main_obj,onTouchBeginPause,(void))
 
 Void Main_obj::keyUp( ::openfl::_v2::events::KeyboardEvent event){
 {
-		HX_STACK_FRAME("Main","keyUp",0x5b320005,"Main.keyUp","Main.hx",319,0x087e5c05)
+		HX_STACK_FRAME("Main","keyUp",0x5b320005,"Main.keyUp","Main.hx",321,0x087e5c05)
 		HX_STACK_THIS(this)
 		HX_STACK_ARG(event,"event")
-		HX_STACK_LINE(319)
+		HX_STACK_LINE(321)
 		if (((event->keyCode == (int)38))){
-			HX_STACK_LINE(320)
+			HX_STACK_LINE(322)
 			this->arrowKeyUp = false;
 		}
 		else{
-			HX_STACK_LINE(321)
+			HX_STACK_LINE(323)
 			if (((event->keyCode == (int)40))){
-				HX_STACK_LINE(322)
+				HX_STACK_LINE(324)
 				this->arrowKeyDown = false;
 			}
 		}
@@ -586,153 +586,153 @@ HX_DEFINE_DYNAMIC_FUNC1(Main_obj,keyUp,(void))
 
 Void Main_obj::everyFrame( ::openfl::_v2::events::Event event){
 {
-		HX_STACK_FRAME("Main","everyFrame",0xc084a887,"Main.everyFrame","Main.hx",328,0x087e5c05)
+		HX_STACK_FRAME("Main","everyFrame",0xc084a887,"Main.everyFrame","Main.hx",330,0x087e5c05)
 		HX_STACK_THIS(this)
 		HX_STACK_ARG(event,"event")
-		HX_STACK_LINE(328)
+		HX_STACK_LINE(330)
 		if (((this->currentGameState == ::GameState_obj::Playing))){
-			HX_STACK_LINE(330)
+			HX_STACK_LINE(332)
 			if (((bool(this->arrowKeyUp) || bool(this->touchUp)))){
-				HX_STACK_LINE(331)
+				HX_STACK_LINE(333)
 				::Platform _g = this->platform1;		HX_STACK_VAR(_g,"_g");
-				HX_STACK_LINE(331)
+				HX_STACK_LINE(333)
 				Float _g1 = _g->get_y();		HX_STACK_VAR(_g1,"_g1");
-				HX_STACK_LINE(331)
+				HX_STACK_LINE(333)
 				Float _g11 = (_g1 - this->platformSpeed);		HX_STACK_VAR(_g11,"_g11");
-				HX_STACK_LINE(331)
+				HX_STACK_LINE(333)
 				_g->set_y(_g11);
 			}
-			HX_STACK_LINE(333)
+			HX_STACK_LINE(335)
 			if (((bool(this->arrowKeyDown) || bool(this->touchDown)))){
-				HX_STACK_LINE(334)
+				HX_STACK_LINE(336)
 				::Platform _g = this->platform1;		HX_STACK_VAR(_g,"_g");
-				HX_STACK_LINE(334)
+				HX_STACK_LINE(336)
 				Float _g2 = _g->get_y();		HX_STACK_VAR(_g2,"_g2");
-				HX_STACK_LINE(334)
+				HX_STACK_LINE(336)
 				Float _g3 = (_g2 + this->platformSpeed);		HX_STACK_VAR(_g3,"_g3");
-				HX_STACK_LINE(334)
+				HX_STACK_LINE(336)
 				_g->set_y(_g3);
 			}
-			HX_STACK_LINE(336)
+			HX_STACK_LINE(338)
 			if ((this->spaceKey)){
-				HX_STACK_LINE(337)
+				HX_STACK_LINE(339)
 				this->setGameState(::GameState_obj::Paused);
 			}
-			HX_STACK_LINE(340)
+			HX_STACK_LINE(342)
 			Float _g4 = this->ball->get_x();		HX_STACK_VAR(_g4,"_g4");
 			struct _Function_2_1{
 				inline static bool Block( hx::ObjectPtr< ::Main_obj > __this){
-					HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","Main.hx",340,0x087e5c05)
+					HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","Main.hx",342,0x087e5c05)
 					{
-						HX_STACK_LINE(340)
+						HX_STACK_LINE(342)
 						Float _g5 = __this->ball->get_y();		HX_STACK_VAR(_g5,"_g5");
-						HX_STACK_LINE(340)
+						HX_STACK_LINE(342)
 						Float _g6 = __this->platform2->get_y();		HX_STACK_VAR(_g6,"_g6");
-						HX_STACK_LINE(340)
+						HX_STACK_LINE(342)
 						Float _g7 = (_g6 + (int)70);		HX_STACK_VAR(_g7,"_g7");
-						HX_STACK_LINE(340)
+						HX_STACK_LINE(342)
 						return (_g5 > _g7);
 					}
 					return null();
 				}
 			};
-			HX_STACK_LINE(340)
+			HX_STACK_LINE(342)
 			if (((  (((_g4 > (this->larg - (Float(this->larg) / Float((int)2)))))) ? bool(_Function_2_1::Block(this)) : bool(false) ))){
-				HX_STACK_LINE(341)
+				HX_STACK_LINE(343)
 				::Platform _g = this->platform2;		HX_STACK_VAR(_g,"_g");
-				HX_STACK_LINE(341)
+				HX_STACK_LINE(343)
 				Float _g8 = _g->get_y();		HX_STACK_VAR(_g8,"_g8");
-				HX_STACK_LINE(341)
+				HX_STACK_LINE(343)
 				Float _g9 = (_g8 + this->platformSpeed);		HX_STACK_VAR(_g9,"_g9");
-				HX_STACK_LINE(341)
+				HX_STACK_LINE(343)
 				_g->set_y(_g9);
 			}
-			HX_STACK_LINE(343)
+			HX_STACK_LINE(345)
 			Float _g10 = this->ball->get_x();		HX_STACK_VAR(_g10,"_g10");
 			struct _Function_2_2{
 				inline static bool Block( hx::ObjectPtr< ::Main_obj > __this){
-					HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","Main.hx",343,0x087e5c05)
+					HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","Main.hx",345,0x087e5c05)
 					{
-						HX_STACK_LINE(343)
+						HX_STACK_LINE(345)
 						Float _g11 = __this->ball->get_y();		HX_STACK_VAR(_g11,"_g11");
-						HX_STACK_LINE(343)
+						HX_STACK_LINE(345)
 						Float _g12 = __this->platform2->get_y();		HX_STACK_VAR(_g12,"_g12");
-						HX_STACK_LINE(343)
+						HX_STACK_LINE(345)
 						Float _g13 = (_g12 + (int)30);		HX_STACK_VAR(_g13,"_g13");
-						HX_STACK_LINE(343)
+						HX_STACK_LINE(345)
 						return (_g11 < _g13);
 					}
 					return null();
 				}
 			};
-			HX_STACK_LINE(343)
+			HX_STACK_LINE(345)
 			if (((  (((_g10 > (this->larg - (Float(this->larg) / Float((int)2)))))) ? bool(_Function_2_2::Block(this)) : bool(false) ))){
-				HX_STACK_LINE(344)
+				HX_STACK_LINE(346)
 				::Platform _g = this->platform2;		HX_STACK_VAR(_g,"_g");
-				HX_STACK_LINE(344)
+				HX_STACK_LINE(346)
 				Float _g14 = _g->get_y();		HX_STACK_VAR(_g14,"_g14");
-				HX_STACK_LINE(344)
+				HX_STACK_LINE(346)
 				Float _g15 = (_g14 - this->platformSpeed);		HX_STACK_VAR(_g15,"_g15");
-				HX_STACK_LINE(344)
+				HX_STACK_LINE(346)
 				_g->set_y(_g15);
 			}
-			HX_STACK_LINE(347)
+			HX_STACK_LINE(349)
 			Float _g16 = this->platform1->get_y();		HX_STACK_VAR(_g16,"_g16");
-			HX_STACK_LINE(347)
+			HX_STACK_LINE(349)
 			if (((_g16 < (int)0))){
-				HX_STACK_LINE(347)
+				HX_STACK_LINE(349)
 				this->platform1->set_y((int)0);
 			}
-			HX_STACK_LINE(348)
+			HX_STACK_LINE(350)
 			Float _g17 = this->platform1->get_y();		HX_STACK_VAR(_g17,"_g17");
-			HX_STACK_LINE(348)
+			HX_STACK_LINE(350)
 			if (((_g17 > (this->alt - (Float(this->alt) / Float((int)10)))))){
-				HX_STACK_LINE(348)
+				HX_STACK_LINE(350)
 				this->platform1->set_y((this->alt - (Float(this->alt) / Float((int)10))));
 			}
-			HX_STACK_LINE(350)
+			HX_STACK_LINE(352)
 			Float _g18 = this->platform2->get_y();		HX_STACK_VAR(_g18,"_g18");
-			HX_STACK_LINE(350)
+			HX_STACK_LINE(352)
 			if (((_g18 < (int)0))){
-				HX_STACK_LINE(350)
+				HX_STACK_LINE(352)
 				this->platform2->set_y((int)0);
 			}
-			HX_STACK_LINE(351)
+			HX_STACK_LINE(353)
 			Float _g19 = this->platform2->get_y();		HX_STACK_VAR(_g19,"_g19");
-			HX_STACK_LINE(351)
+			HX_STACK_LINE(353)
 			if (((_g19 > this->alt))){
-				HX_STACK_LINE(351)
+				HX_STACK_LINE(353)
 				this->platform2->set_y(this->alt);
 			}
-			HX_STACK_LINE(353)
+			HX_STACK_LINE(355)
 			{
-				HX_STACK_LINE(353)
+				HX_STACK_LINE(355)
 				::Ball _g = this->ball;		HX_STACK_VAR(_g,"_g");
-				HX_STACK_LINE(353)
+				HX_STACK_LINE(355)
 				Float _g20 = _g->get_x();		HX_STACK_VAR(_g20,"_g20");
-				HX_STACK_LINE(353)
+				HX_STACK_LINE(355)
 				Float _g21 = (_g20 + this->ballMovement->x);		HX_STACK_VAR(_g21,"_g21");
-				HX_STACK_LINE(353)
+				HX_STACK_LINE(355)
 				_g->set_x(_g21);
 			}
-			HX_STACK_LINE(354)
+			HX_STACK_LINE(356)
 			{
-				HX_STACK_LINE(354)
+				HX_STACK_LINE(356)
 				::Ball _g = this->ball;		HX_STACK_VAR(_g,"_g");
-				HX_STACK_LINE(354)
+				HX_STACK_LINE(356)
 				Float _g22 = _g->get_y();		HX_STACK_VAR(_g22,"_g22");
-				HX_STACK_LINE(354)
+				HX_STACK_LINE(356)
 				Float _g23 = (_g22 + this->ballMovement->y);		HX_STACK_VAR(_g23,"_g23");
-				HX_STACK_LINE(354)
+				HX_STACK_LINE(356)
 				_g->set_y(_g23);
 			}
 			struct _Function_2_3{
 				inline static bool Block( hx::ObjectPtr< ::Main_obj > __this){
-					HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","Main.hx",356,0x087e5c05)
+					HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","Main.hx",358,0x087e5c05)
 					{
-						HX_STACK_LINE(356)
+						HX_STACK_LINE(358)
 						Float _g24 = __this->ball->get_x();		HX_STACK_VAR(_g24,"_g24");
-						HX_STACK_LINE(356)
+						HX_STACK_LINE(358)
 						return (_g24 < ((Float(__this->larg) / Float((int)50)) + (Float(__this->larg) / Float((int)50))));
 					}
 					return null();
@@ -740,13 +740,13 @@ Void Main_obj::everyFrame( ::openfl::_v2::events::Event event){
 			};
 			struct _Function_2_4{
 				inline static bool Block( hx::ObjectPtr< ::Main_obj > __this){
-					HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","Main.hx",356,0x087e5c05)
+					HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","Main.hx",358,0x087e5c05)
 					{
-						HX_STACK_LINE(356)
+						HX_STACK_LINE(358)
 						Float _g25 = __this->ball->get_y();		HX_STACK_VAR(_g25,"_g25");
-						HX_STACK_LINE(356)
+						HX_STACK_LINE(358)
 						Float _g26 = __this->platform1->get_y();		HX_STACK_VAR(_g26,"_g26");
-						HX_STACK_LINE(356)
+						HX_STACK_LINE(358)
 						return (_g25 >= _g26);
 					}
 					return null();
@@ -754,34 +754,34 @@ Void Main_obj::everyFrame( ::openfl::_v2::events::Event event){
 			};
 			struct _Function_2_5{
 				inline static bool Block( hx::ObjectPtr< ::Main_obj > __this){
-					HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","Main.hx",356,0x087e5c05)
+					HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","Main.hx",358,0x087e5c05)
 					{
-						HX_STACK_LINE(356)
+						HX_STACK_LINE(358)
 						Float _g27 = __this->ball->get_y();		HX_STACK_VAR(_g27,"_g27");
-						HX_STACK_LINE(356)
+						HX_STACK_LINE(358)
 						Float _g28 = __this->platform1->get_y();		HX_STACK_VAR(_g28,"_g28");
-						HX_STACK_LINE(356)
+						HX_STACK_LINE(358)
 						Float _g29 = (_g28 + (Float(__this->alt) / Float((int)10)));		HX_STACK_VAR(_g29,"_g29");
-						HX_STACK_LINE(356)
+						HX_STACK_LINE(358)
 						return (_g27 <= _g29);
 					}
 					return null();
 				}
 			};
-			HX_STACK_LINE(356)
+			HX_STACK_LINE(358)
 			if (((  (((  (((  (((this->ballMovement->x < (int)0))) ? bool(_Function_2_3::Block(this)) : bool(false) ))) ? bool(_Function_2_4::Block(this)) : bool(false) ))) ? bool(_Function_2_5::Block(this)) : bool(false) ))){
-				HX_STACK_LINE(357)
+				HX_STACK_LINE(359)
 				this->bounceBall();
-				HX_STACK_LINE(358)
+				HX_STACK_LINE(360)
 				this->ball->set_x((Float(this->larg) / Float((int)50)));
 			}
 			struct _Function_2_6{
 				inline static bool Block( hx::ObjectPtr< ::Main_obj > __this){
-					HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","Main.hx",360,0x087e5c05)
+					HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","Main.hx",362,0x087e5c05)
 					{
-						HX_STACK_LINE(360)
+						HX_STACK_LINE(362)
 						Float _g30 = __this->ball->get_x();		HX_STACK_VAR(_g30,"_g30");
-						HX_STACK_LINE(360)
+						HX_STACK_LINE(362)
 						return (_g30 > ((__this->larg - (Float(__this->larg) / Float((int)50))) - (Float(__this->larg) / Float((int)50))));
 					}
 					return null();
@@ -789,13 +789,13 @@ Void Main_obj::everyFrame( ::openfl::_v2::events::Event event){
 			};
 			struct _Function_2_7{
 				inline static bool Block( hx::ObjectPtr< ::Main_obj > __this){
-					HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","Main.hx",360,0x087e5c05)
+					HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","Main.hx",362,0x087e5c05)
 					{
-						HX_STACK_LINE(360)
+						HX_STACK_LINE(362)
 						Float _g31 = __this->ball->get_y();		HX_STACK_VAR(_g31,"_g31");
-						HX_STACK_LINE(360)
+						HX_STACK_LINE(362)
 						Float _g32 = __this->platform2->get_y();		HX_STACK_VAR(_g32,"_g32");
-						HX_STACK_LINE(360)
+						HX_STACK_LINE(362)
 						return (_g31 >= _g32);
 					}
 					return null();
@@ -803,66 +803,66 @@ Void Main_obj::everyFrame( ::openfl::_v2::events::Event event){
 			};
 			struct _Function_2_8{
 				inline static bool Block( hx::ObjectPtr< ::Main_obj > __this){
-					HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","Main.hx",360,0x087e5c05)
+					HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","Main.hx",362,0x087e5c05)
 					{
-						HX_STACK_LINE(360)
+						HX_STACK_LINE(362)
 						Float _g33 = __this->ball->get_y();		HX_STACK_VAR(_g33,"_g33");
-						HX_STACK_LINE(360)
+						HX_STACK_LINE(362)
 						Float _g34 = __this->platform2->get_y();		HX_STACK_VAR(_g34,"_g34");
-						HX_STACK_LINE(360)
+						HX_STACK_LINE(362)
 						Float _g35 = (_g34 + (Float(__this->alt) / Float((int)10)));		HX_STACK_VAR(_g35,"_g35");
-						HX_STACK_LINE(360)
+						HX_STACK_LINE(362)
 						return (_g33 <= _g35);
 					}
 					return null();
 				}
 			};
-			HX_STACK_LINE(360)
+			HX_STACK_LINE(362)
 			if (((  (((  (((  (((this->ballMovement->x > (int)0))) ? bool(_Function_2_6::Block(this)) : bool(false) ))) ? bool(_Function_2_7::Block(this)) : bool(false) ))) ? bool(_Function_2_8::Block(this)) : bool(false) ))){
-				HX_STACK_LINE(361)
+				HX_STACK_LINE(363)
 				this->bounceBall();
-				HX_STACK_LINE(362)
+				HX_STACK_LINE(364)
 				this->ball->set_x((this->larg - (Float(this->larg) / Float((int)50))));
 			}
-			HX_STACK_LINE(365)
+			HX_STACK_LINE(367)
 			Float _g36 = this->ball->get_y();		HX_STACK_VAR(_g36,"_g36");
 			struct _Function_2_9{
 				inline static bool Block( hx::ObjectPtr< ::Main_obj > __this){
-					HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","Main.hx",365,0x087e5c05)
+					HX_STACK_FRAME("*","closure",0x5bdab937,"*.closure","Main.hx",367,0x087e5c05)
 					{
-						HX_STACK_LINE(365)
+						HX_STACK_LINE(367)
 						Float _g37 = __this->ball->get_y();		HX_STACK_VAR(_g37,"_g37");
-						HX_STACK_LINE(365)
+						HX_STACK_LINE(367)
 						return (_g37 > (__this->alt - (Float(__this->larg) / Float((int)50))));
 					}
 					return null();
 				}
 			};
-			HX_STACK_LINE(365)
+			HX_STACK_LINE(367)
 			if (((  ((!(((_g36 < (Float(this->larg) / Float((int)50))))))) ? bool(_Function_2_9::Block(this)) : bool(true) ))){
-				HX_STACK_LINE(365)
+				HX_STACK_LINE(367)
 				hx::MultEq(this->ballMovement->y,(int)-1);
 			}
-			HX_STACK_LINE(367)
+			HX_STACK_LINE(369)
 			Float _g38 = this->ball->get_x();		HX_STACK_VAR(_g38,"_g38");
-			HX_STACK_LINE(367)
+			HX_STACK_LINE(369)
 			if (((_g38 < (Float(this->larg) / Float((int)50))))){
-				HX_STACK_LINE(368)
-				this->messageField->set_alpha((int)1);
-				HX_STACK_LINE(369)
-				this->messageField->set_text(HX_CSTRING("WIN!"));
 				HX_STACK_LINE(370)
+				this->messageField->set_alpha((int)1);
+				HX_STACK_LINE(371)
+				this->messageField->set_text(HX_CSTRING("WIN!"));
+				HX_STACK_LINE(372)
 				this->winGame(::Player_obj::AI);
 			}
-			HX_STACK_LINE(372)
+			HX_STACK_LINE(374)
 			Float _g39 = this->ball->get_x();		HX_STACK_VAR(_g39,"_g39");
-			HX_STACK_LINE(372)
+			HX_STACK_LINE(374)
 			if (((_g39 > (this->larg - (Float(this->larg) / Float((int)50)))))){
-				HX_STACK_LINE(373)
-				this->messageField->set_alpha((int)1);
-				HX_STACK_LINE(374)
-				this->messageField->set_text(HX_CSTRING("LOSE!"));
 				HX_STACK_LINE(375)
+				this->messageField->set_alpha((int)1);
+				HX_STACK_LINE(376)
+				this->messageField->set_text(HX_CSTRING("LOSE!"));
+				HX_STACK_LINE(377)
 				this->winGame(::Player_obj::Human);
 			}
 		}
@@ -875,9 +875,9 @@ HX_DEFINE_DYNAMIC_FUNC1(Main_obj,everyFrame,(void))
 
 Void Main_obj::updateScore( ){
 {
-		HX_STACK_FRAME("Main","updateScore",0x5d7894f4,"Main.updateScore","Main.hx",382,0x087e5c05)
+		HX_STACK_FRAME("Main","updateScore",0x5d7894f4,"Main.updateScore","Main.hx",384,0x087e5c05)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(382)
+		HX_STACK_LINE(384)
 		this->scoreField->set_text(((this->scorePlayer + HX_CSTRING(":")) + this->scoreAI));
 	}
 return null();
@@ -888,19 +888,19 @@ HX_DEFINE_DYNAMIC_FUNC0(Main_obj,updateScore,(void))
 
 Void Main_obj::winGame( ::Player player){
 {
-		HX_STACK_FRAME("Main","winGame",0x39706d19,"Main.winGame","Main.hx",386,0x087e5c05)
+		HX_STACK_FRAME("Main","winGame",0x39706d19,"Main.winGame","Main.hx",388,0x087e5c05)
 		HX_STACK_THIS(this)
 		HX_STACK_ARG(player,"player")
-		HX_STACK_LINE(387)
+		HX_STACK_LINE(389)
 		if (((player == ::Player_obj::Human))){
-			HX_STACK_LINE(388)
+			HX_STACK_LINE(390)
 			(this->scorePlayer)++;
 		}
 		else{
-			HX_STACK_LINE(390)
+			HX_STACK_LINE(392)
 			(this->scoreAI)++;
 		}
-		HX_STACK_LINE(392)
+		HX_STACK_LINE(394)
 		this->setGameState(::GameState_obj::Inizio);
 	}
 return null();
@@ -911,40 +911,40 @@ HX_DEFINE_DYNAMIC_FUNC1(Main_obj,winGame,(void))
 
 Void Main_obj::bounceBall( ){
 {
-		HX_STACK_FRAME("Main","bounceBall",0x95b4759c,"Main.bounceBall","Main.hx",396,0x087e5c05)
+		HX_STACK_FRAME("Main","bounceBall",0x95b4759c,"Main.bounceBall","Main.hx",398,0x087e5c05)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(397)
+		HX_STACK_LINE(399)
 		int direction;		HX_STACK_VAR(direction,"direction");
-		HX_STACK_LINE(397)
+		HX_STACK_LINE(399)
 		if (((this->ballMovement->x > (int)0))){
-			HX_STACK_LINE(397)
+			HX_STACK_LINE(399)
 			direction = (int)-1;
 		}
 		else{
-			HX_STACK_LINE(397)
+			HX_STACK_LINE(399)
 			direction = (int)1;
 		}
-		HX_STACK_LINE(398)
+		HX_STACK_LINE(400)
 		Float _g = ::Math_obj::random();		HX_STACK_VAR(_g,"_g");
-		HX_STACK_LINE(398)
+		HX_STACK_LINE(400)
 		Float _g1 = (_g * ::Math_obj::PI);		HX_STACK_VAR(_g1,"_g1");
-		HX_STACK_LINE(398)
+		HX_STACK_LINE(400)
 		Float _g2 = (Float(_g1) / Float((int)2));		HX_STACK_VAR(_g2,"_g2");
-		HX_STACK_LINE(398)
+		HX_STACK_LINE(400)
 		Float randomAngle = (_g2 - (int)45);		HX_STACK_VAR(randomAngle,"randomAngle");
-		HX_STACK_LINE(399)
+		HX_STACK_LINE(401)
 		Float _g3 = ::Math_obj::cos(randomAngle);		HX_STACK_VAR(_g3,"_g3");
-		HX_STACK_LINE(399)
+		HX_STACK_LINE(401)
 		Float _g4 = (direction * _g3);		HX_STACK_VAR(_g4,"_g4");
-		HX_STACK_LINE(399)
+		HX_STACK_LINE(401)
 		Float _g5 = (_g4 * this->ballSpeed);		HX_STACK_VAR(_g5,"_g5");
-		HX_STACK_LINE(399)
+		HX_STACK_LINE(401)
 		this->ballMovement->x = _g5;
-		HX_STACK_LINE(400)
+		HX_STACK_LINE(402)
 		Float _g6 = ::Math_obj::sin(randomAngle);		HX_STACK_VAR(_g6,"_g6");
-		HX_STACK_LINE(400)
+		HX_STACK_LINE(402)
 		Float _g7 = (_g6 * this->ballSpeed);		HX_STACK_VAR(_g7,"_g7");
-		HX_STACK_LINE(400)
+		HX_STACK_LINE(402)
 		this->ballMovement->y = _g7;
 	}
 return null();
@@ -955,14 +955,14 @@ HX_DEFINE_DYNAMIC_FUNC0(Main_obj,bounceBall,(void))
 
 Void Main_obj::added( Dynamic e){
 {
-		HX_STACK_FRAME("Main","added",0x98771aeb,"Main.added","Main.hx",419,0x087e5c05)
+		HX_STACK_FRAME("Main","added",0x98771aeb,"Main.added","Main.hx",421,0x087e5c05)
 		HX_STACK_THIS(this)
 		HX_STACK_ARG(e,"e")
-		HX_STACK_LINE(420)
+		HX_STACK_LINE(422)
 		this->removeEventListener(::openfl::_v2::events::Event_obj::ADDED_TO_STAGE,this->added_dyn(),null());
-		HX_STACK_LINE(421)
+		HX_STACK_LINE(423)
 		this->get_stage()->addEventListener(::openfl::_v2::events::Event_obj::RESIZE,this->resize_dyn(),null(),null(),null());
-		HX_STACK_LINE(425)
+		HX_STACK_LINE(427)
 		this->init();
 	}
 return null();
@@ -973,14 +973,14 @@ HX_DEFINE_DYNAMIC_FUNC1(Main_obj,added,(void))
 
 Void Main_obj::main( ){
 {
-		HX_STACK_FRAME("Main","main",0xed0e206e,"Main.main","Main.hx",430,0x087e5c05)
-		HX_STACK_LINE(432)
+		HX_STACK_FRAME("Main","main",0xed0e206e,"Main.main","Main.hx",432,0x087e5c05)
+		HX_STACK_LINE(434)
 		::openfl::_v2::Lib_obj::get_current()->get_stage()->set_align(::openfl::display::StageAlign_obj::TOP_LEFT);
-		HX_STACK_LINE(433)
+		HX_STACK_LINE(435)
 		::openfl::_v2::Lib_obj::get_current()->get_stage()->set_scaleMode(::openfl::display::StageScaleMode_obj::NO_SCALE);
-		HX_STACK_LINE(434)
+		HX_STACK_LINE(436)
 		::Main _g = ::Main_obj::__new();		HX_STACK_VAR(_g,"_g");
-		HX_STACK_LINE(434)
+		HX_STACK_LINE(436)
 		::openfl::_v2::Lib_obj::get_current()->addChild(_g);
 	}
 return null();

@@ -166,7 +166,7 @@ class Main extends Sprite
 
 
 		
-		var scoreFormat:TextFormat = new TextFormat("Verdana", 24, 0xFF0000, true);
+		var scoreFormat:TextFormat = new TextFormat("Verdana", 24, 0xFF0000);
 		scoreFormat.align = TextFormatAlign.CENTER;
 
 		scoreField = new TextField();
@@ -222,6 +222,8 @@ class Main extends Sprite
 			messageField.text = "gioco in pausa";
 			spaceKey = false;
 		}else if (state == Inizio) {
+			platform1.y = alt/2;
+			platform2.y = alt/2;
 			ball.x = larg / 2;
 			ball.y = alt / 2;
 			var direction:Int = (Math.random() > .5)?(1):( -1);
@@ -233,8 +235,8 @@ class Main extends Sprite
 		}else if (state == Playing){
 			messageField.alpha = 1;
 			messageField.text = "gioco iniziato";
-			platform1.y = alt/2;
-			platform2.y = alt/2;
+			//platform1.y = alt/2;
+			//platform2.y = alt/2;
 			//ball.x = larg / 2;
 			//ball.y = alt / 2;
 			//var direction:Int = (Math.random() > .5)?(1):( -1);
