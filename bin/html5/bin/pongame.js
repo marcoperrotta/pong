@@ -23,6 +23,20 @@ ApplicationMain.create = function() {
 	ApplicationMain.preloader.create(ApplicationMain.config);
 	var urls = [];
 	var types = [];
+	urls.push("assets/arrowDown.png");
+	types.push("IMAGE");
+	urls.push("assets/arrowUp.png");
+	types.push("IMAGE");
+	urls.push("assets/font/Roboto-Thin.ttf");
+	types.push("FONT");
+	urls.push("assets/img/arrowDown.png");
+	types.push("IMAGE");
+	urls.push("assets/img/arrowUp.png");
+	types.push("IMAGE");
+	urls.push("assets/img/pause.png");
+	types.push("IMAGE");
+	urls.push("assets/Roboto-Thin.ttf");
+	types.push("FONT");
 	ApplicationMain.preloader.load(urls,types);
 	var result = ApplicationMain.app.exec();
 };
@@ -873,6 +887,7 @@ openfl_display_Sprite.prototype = $extend(openfl_display_DisplayObjectContainer.
 	,__class__: openfl_display_Sprite
 });
 var Main = function() {
+	this.font = openfl_Assets.getFont("assets/font/Roboto-Thin.ttf");
 	this.palla = new Prova();
 	this.altt = openfl_Lib.current.stage.stageHeight;
 	this.alt = openfl_Lib.current.stage.stageHeight / 2;
@@ -915,23 +930,17 @@ Main.prototype = $extend(openfl_display_Sprite.prototype,{
 		this.ball.set_y(this.alt / 2);
 		this.addChild(this.ball);
 		this.arrowUp = new ArrowUp();
-		this.arrowUp.set_x(this.larg - this.larg / 2);
-		this.arrowUp.set_y(this.altt - this.alt / 2 - this.alt / 4);
 		this.addChild(this.arrowUp);
 		this.arrowDown = new ArrowDown();
-		this.arrowDown.set_x(this.larg - this.larg / 2);
-		this.arrowDown.set_y(this.altt - this.alt / 2 + this.alt / 4);
 		this.addChild(this.arrowDown);
 		this.bottonPause = new BottonPause();
-		this.bottonPause.set_x(this.larg / 4);
-		this.bottonPause.set_y(this.altt - this.alt / 2);
 		this.addChild(this.bottonPause);
 		this.pause = new openfl_text_TextField();
 		this.addChild(this.pause);
 		this.pause.set_x(this.larg / 4);
 		this.pause.set_x(this.altt - this.alt / 2);
 		this.pause.selectable = false;
-		var scoreFormat = new openfl_text_TextFormat("Verdana",24,16711680);
+		var scoreFormat = new openfl_text_TextFormat(this.font.fontName,this.alt / 16,16711680);
 		scoreFormat.align = openfl_text_TextFormatAlign.CENTER;
 		this.scoreField = new openfl_text_TextField();
 		this.addChild(this.scoreField);
@@ -939,12 +948,12 @@ Main.prototype = $extend(openfl_display_Sprite.prototype,{
 		this.scoreField.set_y(this.alt / 30);
 		this.scoreField.set_defaultTextFormat(scoreFormat);
 		this.scoreField.selectable = false;
-		var messageFormat = new openfl_text_TextFormat("Verdana",18,16711680,true);
+		var messageFormat = new openfl_text_TextFormat(this.font.fontName,this.alt / 22,16776960,true);
 		messageFormat.align = openfl_text_TextFormatAlign.CENTER;
 		this.messageField = new openfl_text_TextField();
 		this.addChild(this.messageField);
 		this.messageField.set_width(this.larg);
-		this.messageField.set_y(this.alt + this.alt / 20);
+		this.messageField.set_y(this.alt);
 		this.messageField.set_defaultTextFormat(messageFormat);
 		this.messageField.selectable = false;
 		this.arrowKeyUp = false;
@@ -1023,11 +1032,11 @@ Main.prototype = $extend(openfl_display_Sprite.prototype,{
 				_g1.set_y(_g1.get_y() + this.platformSpeed);
 			}
 			if(this.spaceKey) this.setGameState(GameState.Paused);
-			if(this.ball.get_x() > this.larg - this.larg / 2 && this.ball.get_y() > this.platform2.get_y()) {
+			if(this.ball.get_x() > this.larg - this.larg / 4 && this.ball.get_y() > this.platform2.get_y() + this.alt / 20) {
 				var _g2 = this.platform2;
 				_g2.set_y(_g2.get_y() + this.platformSpeed);
 			}
-			if(this.ball.get_x() > this.larg - this.larg / 2 && this.ball.get_y() < this.platform2.get_y() + this.alt / 10) {
+			if(this.ball.get_x() > this.larg - this.larg / 4 && this.ball.get_y() < this.platform2.get_y() + this.alt / 20) {
 				var _g3 = this.platform2;
 				_g3.set_y(_g3.get_y() - this.platformSpeed);
 			}
@@ -1097,9 +1106,12 @@ var ArrowDown = function() {
 	this.alt = openfl_Lib.current.stage.stageHeight / 2;
 	this.larg = openfl_Lib.current.stage.stageWidth;
 	openfl_display_Sprite.call(this);
-	this.get_graphics().beginFill(16776960);
-	this.get_graphics().drawRect(0,0,this.larg,this.alt / 4);
-	this.get_graphics().endFill();
+	var arrowDown = new openfl_display_Bitmap(openfl_Assets.getBitmapData("assets/img/arrowDown.png"));
+	this.addChild(arrowDown);
+	arrowDown.set_x(this.larg / 2 + this.larg / 8);
+	arrowDown.set_y(this.altt - this.alt / 8 - this.alt / 3);
+	arrowDown.set_height(this.alt / 3);
+	arrowDown.set_width(this.larg / 3);
 };
 $hxClasses["ArrowDown"] = ArrowDown;
 ArrowDown.__name__ = ["ArrowDown"];
@@ -1112,9 +1124,12 @@ var ArrowUp = function() {
 	this.alt = openfl_Lib.current.stage.stageHeight / 2;
 	this.larg = openfl_Lib.current.stage.stageWidth;
 	openfl_display_Sprite.call(this);
-	this.get_graphics().beginFill(16776960);
-	this.get_graphics().drawRect(0,0,this.larg,this.alt / 4);
-	this.get_graphics().endFill();
+	var arrowUp = new openfl_display_Bitmap(openfl_Assets.getBitmapData("assets/img/arrowUp.png"));
+	this.addChild(arrowUp);
+	arrowUp.set_x(this.larg / 2 + this.larg / 8);
+	arrowUp.set_y(this.alt + this.alt / 8);
+	arrowUp.set_height(this.alt / 3);
+	arrowUp.set_width(this.larg / 3);
 };
 $hxClasses["ArrowUp"] = ArrowUp;
 ArrowUp.__name__ = ["ArrowUp"];
@@ -1137,13 +1152,17 @@ Ball.prototype = $extend(openfl_display_Sprite.prototype,{
 	__class__: Ball
 });
 var BottonPause = function() {
+	this.font = openfl_Assets.getFont("assets/font/Roboto-Thin.ttf");
 	this.altt = openfl_Lib.current.stage.stageHeight;
 	this.alt = openfl_Lib.current.stage.stageHeight / 2;
 	this.larg = openfl_Lib.current.stage.stageWidth;
 	openfl_display_Sprite.call(this);
-	this.get_graphics().beginFill(16776960);
-	this.get_graphics().drawCircle(0,0,this.alt / 4);
-	this.get_graphics().endFill();
+	var pause = new openfl_display_Bitmap(openfl_Assets.getBitmapData("assets/img/pause.png"));
+	this.addChild(pause);
+	pause.set_x(this.larg / 8);
+	pause.set_y(this.alt + this.alt / 4);
+	pause.set_height(this.alt / 2);
+	pause.set_width(this.alt / 2);
 };
 $hxClasses["BottonPause"] = BottonPause;
 BottonPause.__name__ = ["BottonPause"];
@@ -1213,6 +1232,27 @@ var DefaultAssetLibrary = function() {
 	this.className = new haxe_ds_StringMap();
 	lime_AssetLibrary.call(this);
 	var id;
+	id = "assets/arrowDown.png";
+	this.path.set(id,id);
+	this.type.set(id,"IMAGE");
+	id = "assets/arrowUp.png";
+	this.path.set(id,id);
+	this.type.set(id,"IMAGE");
+	id = "assets/font/Roboto-Thin.ttf";
+	this.className.set(id,_$_$ASSET_$_$assets_$font_$roboto_$thin_$ttf);
+	this.type.set(id,"FONT");
+	id = "assets/img/arrowDown.png";
+	this.path.set(id,id);
+	this.type.set(id,"IMAGE");
+	id = "assets/img/arrowUp.png";
+	this.path.set(id,id);
+	this.type.set(id,"IMAGE");
+	id = "assets/img/pause.png";
+	this.path.set(id,id);
+	this.type.set(id,"IMAGE");
+	id = "assets/Roboto-Thin.ttf";
+	this.className.set(id,_$_$ASSET_$_$assets_$roboto_$thin_$ttf);
+	this.type.set(id,"FONT");
 };
 $hxClasses["DefaultAssetLibrary"] = DefaultAssetLibrary;
 DefaultAssetLibrary.__name__ = ["DefaultAssetLibrary"];
@@ -1309,6 +1349,86 @@ DefaultAssetLibrary.prototype = $extend(lime_AssetLibrary.prototype,{
 		this.loadBytes(id,callback);
 	}
 	,__class__: DefaultAssetLibrary
+});
+var lime_graphics_Font = function(fontName) {
+	this.fontName = fontName;
+	this.glyphs = new haxe_ds_IntMap();
+};
+$hxClasses["lime.graphics.Font"] = lime_graphics_Font;
+lime_graphics_Font.__name__ = ["lime","graphics","Font"];
+lime_graphics_Font.fromBytes = function(bytes) {
+	var font = new lime_graphics_Font();
+	return font;
+};
+lime_graphics_Font.fromFile = function(path) {
+	var font = new lime_graphics_Font();
+	font.__fromFile(path);
+	return font;
+};
+lime_graphics_Font.prototype = {
+	createImage: function() {
+		this.glyphs = new haxe_ds_IntMap();
+		return null;
+	}
+	,decompose: function() {
+		return null;
+	}
+	,loadRange: function(size,start,end) {
+	}
+	,loadGlyphs: function(size,glyphs) {
+		if(glyphs == null) glyphs = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^`'\"/\\&*()[]{}<>|:;_-+=?,. ";
+	}
+	,__fromFile: function(path) {
+		this.__fontPath = path;
+	}
+	,__class__: lime_graphics_Font
+};
+var openfl_text_Font = function(name) {
+	lime_graphics_Font.call(this,name);
+};
+$hxClasses["openfl.text.Font"] = openfl_text_Font;
+openfl_text_Font.__name__ = ["openfl","text","Font"];
+openfl_text_Font.enumerateFonts = function(enumerateDeviceFonts) {
+	if(enumerateDeviceFonts == null) enumerateDeviceFonts = false;
+	return [];
+};
+openfl_text_Font.fromBytes = function(bytes) {
+	var font = new openfl_text_Font();
+	return font;
+};
+openfl_text_Font.fromFile = function(path) {
+	var font = new openfl_text_Font();
+	font.__fromFile(path);
+	return font;
+};
+openfl_text_Font.registerFont = function(font) {
+	var instance;
+	instance = js_Boot.__cast(Type.createInstance(font,[]) , openfl_text_Font);
+	if(instance != null) openfl_text_Font.__registeredFonts.push(instance);
+};
+openfl_text_Font.__super__ = lime_graphics_Font;
+openfl_text_Font.prototype = $extend(lime_graphics_Font.prototype,{
+	__class__: openfl_text_Font
+});
+var _$_$ASSET_$_$assets_$font_$roboto_$thin_$ttf = function() {
+	openfl_text_Font.call(this);
+	this.fontName = "assets/font/Roboto-Thin.ttf";
+};
+$hxClasses["__ASSET__assets_font_roboto_thin_ttf"] = _$_$ASSET_$_$assets_$font_$roboto_$thin_$ttf;
+_$_$ASSET_$_$assets_$font_$roboto_$thin_$ttf.__name__ = ["__ASSET__assets_font_roboto_thin_ttf"];
+_$_$ASSET_$_$assets_$font_$roboto_$thin_$ttf.__super__ = openfl_text_Font;
+_$_$ASSET_$_$assets_$font_$roboto_$thin_$ttf.prototype = $extend(openfl_text_Font.prototype,{
+	__class__: _$_$ASSET_$_$assets_$font_$roboto_$thin_$ttf
+});
+var _$_$ASSET_$_$assets_$roboto_$thin_$ttf = function() {
+	openfl_text_Font.call(this);
+	this.fontName = "assets/Roboto-Thin.ttf";
+};
+$hxClasses["__ASSET__assets_roboto_thin_ttf"] = _$_$ASSET_$_$assets_$roboto_$thin_$ttf;
+_$_$ASSET_$_$assets_$roboto_$thin_$ttf.__name__ = ["__ASSET__assets_roboto_thin_ttf"];
+_$_$ASSET_$_$assets_$roboto_$thin_$ttf.__super__ = openfl_text_Font;
+_$_$ASSET_$_$assets_$roboto_$thin_$ttf.prototype = $extend(openfl_text_Font.prototype,{
+	__class__: _$_$ASSET_$_$assets_$roboto_$thin_$ttf
 });
 var EReg = function(r,opt) {
 	opt = opt.split("u").join("");
@@ -4068,39 +4188,6 @@ lime_graphics_FlashRenderContext.prototype = {
 		return false;
 	}
 	,__class__: lime_graphics_FlashRenderContext
-};
-var lime_graphics_Font = function(fontName) {
-	this.fontName = fontName;
-	this.glyphs = new haxe_ds_IntMap();
-};
-$hxClasses["lime.graphics.Font"] = lime_graphics_Font;
-lime_graphics_Font.__name__ = ["lime","graphics","Font"];
-lime_graphics_Font.fromBytes = function(bytes) {
-	var font = new lime_graphics_Font();
-	return font;
-};
-lime_graphics_Font.fromFile = function(path) {
-	var font = new lime_graphics_Font();
-	font.__fromFile(path);
-	return font;
-};
-lime_graphics_Font.prototype = {
-	createImage: function() {
-		this.glyphs = new haxe_ds_IntMap();
-		return null;
-	}
-	,decompose: function() {
-		return null;
-	}
-	,loadRange: function(size,start,end) {
-	}
-	,loadGlyphs: function(size,glyphs) {
-		if(glyphs == null) glyphs = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^`'\"/\\&*()[]{}<>|:;_-+=?,. ";
-	}
-	,__fromFile: function(path) {
-		this.__fontPath = path;
-	}
-	,__class__: lime_graphics_Font
 };
 var lime_graphics_GlyphRect = function(x,y,width,height,xOffset,yOffset) {
 	if(yOffset == null) yOffset = 0;
@@ -15819,33 +15906,6 @@ openfl_text_AntiAliasType.ADVANCED.__enum__ = openfl_text_AntiAliasType;
 openfl_text_AntiAliasType.NORMAL = ["NORMAL",1];
 openfl_text_AntiAliasType.NORMAL.toString = $estr;
 openfl_text_AntiAliasType.NORMAL.__enum__ = openfl_text_AntiAliasType;
-var openfl_text_Font = function(name) {
-	lime_graphics_Font.call(this,name);
-};
-$hxClasses["openfl.text.Font"] = openfl_text_Font;
-openfl_text_Font.__name__ = ["openfl","text","Font"];
-openfl_text_Font.enumerateFonts = function(enumerateDeviceFonts) {
-	if(enumerateDeviceFonts == null) enumerateDeviceFonts = false;
-	return [];
-};
-openfl_text_Font.fromBytes = function(bytes) {
-	var font = new openfl_text_Font();
-	return font;
-};
-openfl_text_Font.fromFile = function(path) {
-	var font = new openfl_text_Font();
-	font.__fromFile(path);
-	return font;
-};
-openfl_text_Font.registerFont = function(font) {
-	var instance;
-	instance = js_Boot.__cast(Type.createInstance(font,[]) , openfl_text_Font);
-	if(instance != null) openfl_text_Font.__registeredFonts.push(instance);
-};
-openfl_text_Font.__super__ = lime_graphics_Font;
-openfl_text_Font.prototype = $extend(lime_graphics_Font.prototype,{
-	__class__: openfl_text_Font
-});
 var openfl_text_FontStyle = $hxClasses["openfl.text.FontStyle"] = { __ename__ : true, __constructs__ : ["REGULAR","ITALIC","BOLD_ITALIC","BOLD"] };
 openfl_text_FontStyle.REGULAR = ["REGULAR",0];
 openfl_text_FontStyle.REGULAR.toString = $estr;
@@ -16524,6 +16584,7 @@ if(window.createjs != null) createjs.Sound.alternateExtensions = ["ogg","mp3","w
 openfl_display_DisplayObject.__instanceCount = 0;
 openfl_display_DisplayObject.__worldRenderDirty = 0;
 openfl_display_DisplayObject.__worldTransformDirty = 0;
+openfl_text_Font.__registeredFonts = new Array();
 js_Boot.__toStr = {}.toString;
 lime_Assets.cache = new lime_AssetCache();
 lime_Assets.libraries = new haxe_ds_StringMap();
@@ -17818,7 +17879,6 @@ openfl_net_URLRequestMethod.OPTIONS = "OPTIONS";
 openfl_net_URLRequestMethod.POST = "POST";
 openfl_net_URLRequestMethod.PUT = "PUT";
 openfl_system_SecurityDomain.currentDomain = new openfl_system_SecurityDomain();
-openfl_text_Font.__registeredFonts = new Array();
 openfl_ui__$KeyLocation_KeyLocation_$Impl_$.STANDARD = 0;
 openfl_ui__$KeyLocation_KeyLocation_$Impl_$.LEFT = 1;
 openfl_ui__$KeyLocation_KeyLocation_$Impl_$.RIGHT = 2;

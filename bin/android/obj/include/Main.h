@@ -27,6 +27,7 @@ HX_DECLARE_CLASS3(openfl,_v2,events,KeyboardEvent)
 HX_DECLARE_CLASS3(openfl,_v2,events,MouseEvent)
 HX_DECLARE_CLASS3(openfl,_v2,events,TouchEvent)
 HX_DECLARE_CLASS3(openfl,_v2,geom,Point)
+HX_DECLARE_CLASS3(openfl,_v2,text,Font)
 HX_DECLARE_CLASS3(openfl,_v2,text,TextField)
 
 
@@ -78,6 +79,7 @@ class HXCPP_CLASS_ATTRIBUTES  Main_obj : public ::openfl::_v2::display::Sprite_o
 		::ArrowUp arrowUp;
 		::ArrowDown arrowDown;
 		::BottonPause bottonPause;
+		::openfl::_v2::text::Font font;
 		virtual Void resize( Dynamic e);
 		Dynamic resize_dyn();
 

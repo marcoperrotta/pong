@@ -27,6 +27,34 @@ class ApplicationMain {
 		var types = [];
 		
 		
+		urls.push ("assets/arrowDown.png");
+		types.push (AssetType.IMAGE);
+		
+		
+		urls.push ("assets/arrowUp.png");
+		types.push (AssetType.IMAGE);
+		
+		
+		urls.push ("assets/font/Roboto-Thin.ttf");
+		types.push (AssetType.FONT);
+		
+		
+		urls.push ("assets/img/arrowDown.png");
+		types.push (AssetType.IMAGE);
+		
+		
+		urls.push ("assets/img/arrowUp.png");
+		types.push (AssetType.IMAGE);
+		
+		
+		urls.push ("assets/img/pause.png");
+		types.push (AssetType.IMAGE);
+		
+		
+		urls.push ("assets/Roboto-Thin.ttf");
+		types.push (AssetType.FONT);
+		
+		
 		
 		preloader.load (urls, types);
 		#end

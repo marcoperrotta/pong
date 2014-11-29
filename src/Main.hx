@@ -41,7 +41,6 @@ enum Player {
 	AI;
 }
 
-
  
  
 class Main extends Sprite 
@@ -94,8 +93,9 @@ class Main extends Sprite
 	private var arrowUp:ArrowUp;
 	private var arrowDown:ArrowDown;
 	private var bottonPause:BottonPause;
+
 	
-	
+	var font = Assets.getFont("assets/font/Roboto-Thin.ttf");
 	
 	//private var event:KeyCode;
 
@@ -108,14 +108,22 @@ class Main extends Sprite
 	}
 	
 	function init() {
-		
-		
-		//var b:Bitmap = new Bitmap(bd);
-		//addChild(b);
-		//var b2:Bitmap = new Bitmap(bd2);
-		//addChild(b2);
-		
-
+		/*
+		var arrowDown = new Bitmap(Assets.getBitmapData("assets/img/arrowDown.png"));
+		addChild(arrowDown);
+		arrowDown.x = larg / 2 + larg / 4;
+		arrowDown.y = altt - alt / 8 - alt / 3;
+		arrowDown.height = alt / 3;
+		arrowDown.width = larg / 3;
+		*/
+		/*
+		var arrowUp = new Bitmap(Assets.getBitmapData("assets/img/arrowUp.png"));
+		addChild(arrowUp);
+		arrowUp.x = larg / 2 + larg / 4;
+		arrowUp.y = alt + alt / 8;
+		arrowUp.height = alt / 3;
+		arrowUp.width = larg / 3;
+*/
 		this.graphics.lineStyle(1, 0xFF0000);
 		this.graphics.beginFill(0xFF0000, 0);
 		this.graphics.drawRect(0, 0, larg, alt);
@@ -144,18 +152,18 @@ class Main extends Sprite
 		this.addChild(ball);
 		
 		arrowUp = new ArrowUp();
-		arrowUp.x = larg - larg / 2;
-		arrowUp.y = altt - alt / 2 - alt / 4;
+		//arrowUp.x = larg - larg / 2;
+		//arrowUp.y = altt - alt / 2 - alt / 4;
 		this.addChild(arrowUp);
 		
 		arrowDown = new ArrowDown();
-		arrowDown.x = larg - larg / 2;
-		arrowDown.y = altt - alt / 2 + alt / 4;
+		//arrowDown.x = larg - larg / 2;
+		//arrowDown.y = altt - alt / 2 + alt / 4;
 		this.addChild(arrowDown);
 		
 		bottonPause = new BottonPause();
-		bottonPause.x = larg / 4;
-		bottonPause.y = altt - alt / 2;
+		//bottonPause.x = larg / 4;
+		//bottonPause.y = altt - alt / 2;
 		this.addChild(bottonPause);
 		
 		pause = new TextField();
@@ -164,9 +172,8 @@ class Main extends Sprite
 		pause.x = altt - alt / 2;
 		pause.selectable = false;
 
-
 		
-		var scoreFormat:TextFormat = new TextFormat("Verdana", 24, 0xFF0000);
+		var scoreFormat:TextFormat = new TextFormat(font.fontName, alt/16, 0xFF0000);
 		scoreFormat.align = TextFormatAlign.CENTER;
 
 		scoreField = new TextField();
@@ -176,13 +183,13 @@ class Main extends Sprite
 		scoreField.defaultTextFormat = scoreFormat;
 		scoreField.selectable = false;
 		
-		var messageFormat:TextFormat = new TextFormat("Verdana", 18, 0xFF0000, true);
+		var messageFormat:TextFormat = new TextFormat(font.fontName, alt/22, 0xFFFF00, true);
 		messageFormat.align = TextFormatAlign.CENTER;
 
 		messageField = new TextField();
 		addChild(messageField);
 		messageField.width = larg;
-		messageField.y = alt + alt/20;
+		messageField.y = alt;
 		messageField.defaultTextFormat = messageFormat;
 		messageField.selectable = false;
 
@@ -207,7 +214,6 @@ class Main extends Sprite
 		arrowDown.addEventListener(TouchEvent.TOUCH_END, onTouchEndDown);
 		arrowUp.addEventListener(TouchEvent.TOUCH_END, onTouchEndUp);
 		bottonPause.addEventListener(TouchEvent.TOUCH_BEGIN, onTouchBeginPause);
-		//pause.addEventListener(TouchEvent.TOUCH_BEGIN, onTouchEndPause);
 		//stage.addEventListener(MouseEvent.CLICK, leftClick);
 
 	}
@@ -235,14 +241,6 @@ class Main extends Sprite
 		}else if (state == Playing){
 			messageField.alpha = 1;
 			messageField.text = "gioco iniziato";
-			//platform1.y = alt/2;
-			//platform2.y = alt/2;
-			//ball.x = larg / 2;
-			//ball.y = alt / 2;
-			//var direction:Int = (Math.random() > .5)?(1):( -1);
-			//var randomAngle:Float = (Math.random() * Math.PI / 2) - 45;
-			//ballMovement.x = Math.cos(randomAngle) * ballSpeed;
-			//ballMovement.y = Math.sin(randomAngle) * ballSpeed;
 		}
 	}
 			
@@ -339,10 +337,10 @@ class Main extends Sprite
 				setGameState(Paused);
 			}
 			//AI platform movement
-			if (ball.x > (larg - larg/2) && ball.y > platform2.y) {	//va giù +70
+			if (ball.x > (larg - larg/4) && ball.y > platform2.y + alt/20) {	//va giù +70
 				platform2.y += platformSpeed;
 			}
-			if (ball.x > (larg - larg/2) && ball.y < platform2.y +alt/10) {	//va su +30
+			if (ball.x > (larg - larg/4) && ball.y < platform2.y + alt/20) {	//va su +30
 				platform2.y -= platformSpeed;
 			}
 			// player platform limits

@@ -6,11 +6,15 @@
 #endif
 
 #include <openfl/_v2/display/Sprite.h>
+HX_DECLARE_CLASS0(ArrowDown)
+HX_DECLARE_CLASS0(ArrowUp)
 HX_DECLARE_CLASS0(Ball)
+HX_DECLARE_CLASS0(BottonPause)
 HX_DECLARE_CLASS0(GameState)
 HX_DECLARE_CLASS0(Main)
 HX_DECLARE_CLASS0(Platform)
 HX_DECLARE_CLASS0(Player)
+HX_DECLARE_CLASS0(Prova)
 HX_DECLARE_CLASS3(openfl,_v2,display,DisplayObject)
 HX_DECLARE_CLASS3(openfl,_v2,display,DisplayObjectContainer)
 HX_DECLARE_CLASS3(openfl,_v2,display,IBitmapDrawable)
@@ -23,6 +27,7 @@ HX_DECLARE_CLASS3(openfl,_v2,events,KeyboardEvent)
 HX_DECLARE_CLASS3(openfl,_v2,events,MouseEvent)
 HX_DECLARE_CLASS3(openfl,_v2,events,TouchEvent)
 HX_DECLARE_CLASS3(openfl,_v2,geom,Point)
+HX_DECLARE_CLASS3(openfl,_v2,text,Font)
 HX_DECLARE_CLASS3(openfl,_v2,text,TextField)
 
 
@@ -48,7 +53,11 @@ class HXCPP_CLASS_ATTRIBUTES  Main_obj : public ::openfl::_v2::display::Sprite_o
 		void __Visit(HX_VISIT_PARAMS);
 		::String __ToString() const { return HX_CSTRING("Main"); }
 
+		int larg;
+		Float alt;
+		int altt;
 		bool inited;
+		::Prova palla;
 		::Platform platform1;
 		::Platform platform2;
 		::Ball ball;
@@ -58,12 +67,19 @@ class HXCPP_CLASS_ATTRIBUTES  Main_obj : public ::openfl::_v2::display::Sprite_o
 		::openfl::_v2::text::TextField scoreField;
 		::openfl::_v2::text::TextField messageField;
 		::openfl::_v2::text::TextField test;
+		::openfl::_v2::text::TextField pause;
 		bool arrowKeyUp;
 		bool arrowKeyDown;
 		bool spaceKey;
+		bool touchDown;
+		bool touchUp;
 		int platformSpeed;
 		::openfl::_v2::geom::Point ballMovement;
 		int ballSpeed;
+		::ArrowUp arrowUp;
+		::ArrowDown arrowDown;
+		::BottonPause bottonPause;
+		::openfl::_v2::text::Font font;
 		virtual Void resize( Dynamic e);
 		Dynamic resize_dyn();
 
@@ -76,14 +92,20 @@ class HXCPP_CLASS_ATTRIBUTES  Main_obj : public ::openfl::_v2::display::Sprite_o
 		virtual Void keyDown( ::openfl::_v2::events::KeyboardEvent event);
 		Dynamic keyDown_dyn();
 
-		virtual Void onTouchBegin( ::openfl::_v2::events::TouchEvent e);
-		Dynamic onTouchBegin_dyn();
+		virtual Void onTouchMoveDown( ::openfl::_v2::events::TouchEvent e);
+		Dynamic onTouchMoveDown_dyn();
 
-		virtual Void onTouchMove( ::openfl::_v2::events::TouchEvent e);
-		Dynamic onTouchMove_dyn();
+		virtual Void onTouchMoveUp( ::openfl::_v2::events::TouchEvent e);
+		Dynamic onTouchMoveUp_dyn();
 
-		virtual Void onTouchEnd( ::openfl::_v2::events::TouchEvent e);
-		Dynamic onTouchEnd_dyn();
+		virtual Void onTouchEndDown( ::openfl::_v2::events::TouchEvent e);
+		Dynamic onTouchEndDown_dyn();
+
+		virtual Void onTouchEndUp( ::openfl::_v2::events::TouchEvent e);
+		Dynamic onTouchEndUp_dyn();
+
+		virtual Void onTouchBeginPause( ::openfl::_v2::events::TouchEvent e);
+		Dynamic onTouchBeginPause_dyn();
 
 		virtual Void keyUp( ::openfl::_v2::events::KeyboardEvent event);
 		Dynamic keyUp_dyn();

@@ -112,22 +112,22 @@ Void ApplicationMain_obj::main( ){
 
 		HX_BEGIN_LOCAL_FUNC_S0(hx::LocalFunc,_Function_1_1)
 		Void run(){
-			HX_STACK_FRAME("*","_Function_1_1",0x5200ed37,"*._Function_1_1","ApplicationMain.hx",38,0x0780ded5)
+			HX_STACK_FRAME("*","_Function_1_1",0x5200ed37,"*._Function_1_1","ApplicationMain.hx",35,0x0780ded5)
 			{
-				HX_STACK_LINE(40)
+				HX_STACK_LINE(37)
 				::openfl::_v2::Lib_obj::get_current()->get_stage()->set_align(::openfl::display::StageAlign_obj::TOP_LEFT);
-				HX_STACK_LINE(41)
+				HX_STACK_LINE(38)
 				::openfl::_v2::Lib_obj::get_current()->get_stage()->set_scaleMode(::openfl::display::StageScaleMode_obj::NO_SCALE);
-				HX_STACK_LINE(42)
+				HX_STACK_LINE(39)
 				::openfl::_v2::Lib_obj::get_current()->loaderInfo = ::openfl::_v2::display::LoaderInfo_obj::create(null());
-				HX_STACK_LINE(47)
+				HX_STACK_LINE(44)
 				try
 				{
 				HX_STACK_CATCHABLE(Dynamic, 0);
 				{
-					HX_STACK_LINE(49)
+					HX_STACK_LINE(46)
 					::String currentPath = ::haxe::io::Path_obj::directory(::Sys_obj::executablePath());		HX_STACK_VAR(currentPath,"currentPath");
-					HX_STACK_LINE(50)
+					HX_STACK_LINE(47)
 					::Sys_obj::setCwd(currentPath);
 				}
 				}
@@ -138,42 +138,42 @@ Void ApplicationMain_obj::main( ){
 						}
 					}
 				}
-				HX_STACK_LINE(67)
+				HX_STACK_LINE(64)
 				::openfl::_v2::Assets_obj::initialize();
-				HX_STACK_LINE(69)
+				HX_STACK_LINE(66)
 				bool hasMain = false;		HX_STACK_VAR(hasMain,"hasMain");
-				HX_STACK_LINE(71)
+				HX_STACK_LINE(68)
 				{
-					HX_STACK_LINE(71)
+					HX_STACK_LINE(68)
 					int _g = (int)0;		HX_STACK_VAR(_g,"_g");
-					HX_STACK_LINE(71)
+					HX_STACK_LINE(68)
 					Array< ::String > _g1 = ::Type_obj::getClassFields(hx::ClassOf< ::Main >());		HX_STACK_VAR(_g1,"_g1");
-					HX_STACK_LINE(71)
+					HX_STACK_LINE(68)
 					while(((_g < _g1->length))){
-						HX_STACK_LINE(71)
+						HX_STACK_LINE(68)
 						::String methodName = _g1->__get(_g);		HX_STACK_VAR(methodName,"methodName");
-						HX_STACK_LINE(71)
+						HX_STACK_LINE(68)
 						++(_g);
-						HX_STACK_LINE(73)
+						HX_STACK_LINE(70)
 						if (((methodName == HX_CSTRING("main")))){
-							HX_STACK_LINE(75)
+							HX_STACK_LINE(72)
 							hasMain = true;
-							HX_STACK_LINE(76)
+							HX_STACK_LINE(73)
 							break;
 						}
 					}
 				}
-				HX_STACK_LINE(82)
+				HX_STACK_LINE(79)
 				if ((hasMain)){
-					HX_STACK_LINE(84)
+					HX_STACK_LINE(81)
 					::Reflect_obj::callMethod(hx::ClassOf< ::Main >(),::Reflect_obj::field(hx::ClassOf< ::Main >(),HX_CSTRING("main")),Dynamic( Array_obj<Dynamic>::__new()));
 				}
 				else{
-					HX_STACK_LINE(88)
+					HX_STACK_LINE(85)
 					::DocumentClass instance = ::Type_obj::createInstance(hx::ClassOf< ::DocumentClass >(),Dynamic( Array_obj<Dynamic>::__new()));		HX_STACK_VAR(instance,"instance");
-					HX_STACK_LINE(90)
+					HX_STACK_LINE(87)
 					if ((::Std_obj::is(instance,hx::ClassOf< ::openfl::_v2::display::DisplayObject >()))){
-						HX_STACK_LINE(92)
+						HX_STACK_LINE(89)
 						::openfl::_v2::Lib_obj::get_current()->addChild(instance);
 					}
 				}
@@ -182,7 +182,7 @@ Void ApplicationMain_obj::main( ){
 		}
 		HX_END_LOCAL_FUNC0((void))
 
-		HX_STACK_LINE(38)
+		HX_STACK_LINE(35)
 		::openfl::_v2::Lib_obj::create( Dynamic(new _Function_1_1()),(int)0,(int)0,(int)60,(int)3355443,(int((int((int((int((int((int((int((int((int((int(::openfl::_v2::Lib_obj::HARDWARE) | int(::openfl::_v2::Lib_obj::ALLOW_SHADERS))) | int((int)0))) | int((int)0))) | int((int)0))) | int(::openfl::_v2::Lib_obj::RESIZABLE))) | int((int)0))) | int((int)0))) | int(::openfl::_v2::Lib_obj::FULLSCREEN))) | int((int)0))) | int((int)0)),HX_CSTRING("pongame"),null(),null());
 	}
 return null();

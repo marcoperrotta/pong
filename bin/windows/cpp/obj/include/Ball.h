@@ -36,6 +36,8 @@ class HXCPP_CLASS_ATTRIBUTES  Ball_obj : public ::openfl::_v2::display::Sprite_o
 		static void __register();
 		::String __ToString() const { return HX_CSTRING("Ball"); }
 
+		int larg;
+		int alt;
 };
 
 

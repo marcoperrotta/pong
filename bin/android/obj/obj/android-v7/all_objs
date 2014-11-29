@@ -52,7 +52,6 @@ obj/android-v7/906212b1_TextFormat.obj
 obj/android-v7/906212b1_TextField.obj
 obj/android-v7/906212b1_FontType.obj
 obj/android-v7/906212b1_FontStyle.obj
-obj/android-v7/906212b1_Font.obj
 obj/android-v7/de590ecf_ScreenMode.obj
 obj/android-v7/de590ecf_PixelFormat.obj
 obj/android-v7/084a32b2_URLRequestMethod.obj
@@ -142,6 +141,9 @@ obj/android-v7/82b53a69_Player.obj
 obj/android-v7/82b53a69_GameState.obj
 obj/android-v7/82b53a69_List.obj
 obj/android-v7/82b53a69_Lambda.obj
+obj/android-v7/82b53a69___ASSET__assets_roboto_thin_ttf.obj
+obj/android-v7/82b53a69___ASSET__assets_font_roboto_thin_ttf.obj
+obj/android-v7/906212b1_Font.obj
 obj/android-v7/82b53a69_DefaultAssetLibrary.obj
 obj/android-v7/359c154b_AssetLibrary.obj
 obj/android-v7/82b53a69_Date.obj

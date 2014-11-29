@@ -44,11 +44,53 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		#if flash
 		
+		className.set ("assets/arrowDown.png", __ASSET__assets_arrowdown_png);
+		type.set ("assets/arrowDown.png", AssetType.IMAGE);
+		className.set ("assets/arrowUp.png", __ASSET__assets_arrowup_png);
+		type.set ("assets/arrowUp.png", AssetType.IMAGE);
+		className.set ("assets/font/Roboto-Thin.ttf", __ASSET__assets_font_roboto_thin_ttf);
+		type.set ("assets/font/Roboto-Thin.ttf", AssetType.FONT);
+		className.set ("assets/img/arrowDown.png", __ASSET__assets_img_arrowdown_png);
+		type.set ("assets/img/arrowDown.png", AssetType.IMAGE);
+		className.set ("assets/img/arrowUp.png", __ASSET__assets_img_arrowup_png);
+		type.set ("assets/img/arrowUp.png", AssetType.IMAGE);
+		className.set ("assets/img/pause.png", __ASSET__assets_img_pause_png);
+		type.set ("assets/img/pause.png", AssetType.IMAGE);
+		className.set ("assets/Roboto-Thin.ttf", __ASSET__assets_roboto_thin_ttf);
+		type.set ("assets/Roboto-Thin.ttf", AssetType.FONT);
 		
 		
 		#elseif html5
 		
 		var id;
+		id = "assets/arrowDown.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/arrowUp.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/font/Roboto-Thin.ttf";
+		className.set (id, __ASSET__assets_font_roboto_thin_ttf);
+		
+		type.set (id, AssetType.FONT);
+		id = "assets/img/arrowDown.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/img/arrowUp.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/img/pause.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/Roboto-Thin.ttf";
+		className.set (id, __ASSET__assets_roboto_thin_ttf);
+		
+		type.set (id, AssetType.FONT);
 		
 		
 		#else
@@ -56,11 +98,39 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if openfl
 		
 		
+		
+		openfl.text.Font.registerFont (__ASSET__assets_font_roboto_thin_ttf);
+		
+		
+		
+		openfl.text.Font.registerFont (__ASSET__assets_roboto_thin_ttf);
+		
 		#end
 		
 		#if (windows || mac || linux)
 		
 		/*var useManifest = false;
+		
+		className.set ("assets/arrowDown.png", __ASSET__assets_arrowdown_png);
+		type.set ("assets/arrowDown.png", AssetType.IMAGE);
+		
+		className.set ("assets/arrowUp.png", __ASSET__assets_arrowup_png);
+		type.set ("assets/arrowUp.png", AssetType.IMAGE);
+		
+		className.set ("assets/font/Roboto-Thin.ttf", __ASSET__assets_font_roboto_thin_ttf);
+		type.set ("assets/font/Roboto-Thin.ttf", AssetType.FONT);
+		
+		className.set ("assets/img/arrowDown.png", __ASSET__assets_img_arrowdown_png);
+		type.set ("assets/img/arrowDown.png", AssetType.IMAGE);
+		
+		className.set ("assets/img/arrowUp.png", __ASSET__assets_img_arrowup_png);
+		type.set ("assets/img/arrowUp.png", AssetType.IMAGE);
+		
+		className.set ("assets/img/pause.png", __ASSET__assets_img_pause_png);
+		type.set ("assets/img/pause.png", AssetType.IMAGE);
+		
+		className.set ("assets/Roboto-Thin.ttf", __ASSET__assets_roboto_thin_ttf);
+		type.set ("assets/Roboto-Thin.ttf", AssetType.FONT);
 		*/
 		var useManifest = true;
 		
@@ -633,23 +703,46 @@ class DefaultAssetLibrary extends AssetLibrary {
 #if !display
 #if flash
 
+@:keep @:bind #if display private #end class __ASSET__assets_arrowdown_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_arrowup_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_font_roboto_thin_ttf extends null { }
+@:keep @:bind #if display private #end class __ASSET__assets_img_arrowdown_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_img_arrowup_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_img_pause_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_roboto_thin_ttf extends null { }
 
 
 #elseif html5
 
 #if openfl
 
+
+@:keep #if display private #end class __ASSET__assets_font_roboto_thin_ttf extends openfl.text.Font { public function new () { super (); fontName = "assets/font/Roboto-Thin.ttf"; } } 
+
+
+
+@:keep #if display private #end class __ASSET__assets_roboto_thin_ttf extends openfl.text.Font { public function new () { super (); fontName = "assets/Roboto-Thin.ttf"; } } 
+
 #end
 
 #else
 
 #if openfl
+class __ASSET__assets_font_roboto_thin_ttf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/font/Roboto-Thin"; fontName = "Roboto Thin"; }}
+class __ASSET__assets_roboto_thin_ttf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/Roboto-Thin"; fontName = "Roboto Thin"; }}
 
 #end
 
 #if (windows || mac || linux)
 
 //
+//@:bitmap("assets/arrowDown.png") class __ASSET__assets_arrowdown_png extends openfl.display.BitmapData {}
+//@:bitmap("assets/arrowUp.png") class __ASSET__assets_arrowup_png extends openfl.display.BitmapData {}
+//@:font("assets/font/Roboto-Thin.ttf") class __ASSET__assets_font_roboto_thin_ttf extends openfl.text.Font {}
+//@:bitmap("assets/img/arrowDown.png") class __ASSET__assets_img_arrowdown_png extends openfl.display.BitmapData {}
+//@:bitmap("assets/img/arrowUp.png") class __ASSET__assets_img_arrowup_png extends openfl.display.BitmapData {}
+//@:bitmap("assets/img/pause.png") class __ASSET__assets_img_pause_png extends openfl.display.BitmapData {}
+//@:font("assets/Roboto-Thin.ttf") class __ASSET__assets_roboto_thin_ttf extends openfl.text.Font {}
 //
 //
 

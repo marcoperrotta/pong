@@ -46,11 +46,46 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		#if flash
 		
+		path.set ("assets/arrowDown.png", "assets/arrowDown.png");
+		type.set ("assets/arrowDown.png", AssetType.IMAGE);
+		path.set ("assets/arrowUp.png", "assets/arrowUp.png");
+		type.set ("assets/arrowUp.png", AssetType.IMAGE);
+		path.set ("assets/font/Roboto-Thin.ttf", "assets/font/Roboto-Thin.ttf");
+		type.set ("assets/font/Roboto-Thin.ttf", AssetType.FONT);
+		path.set ("assets/img/arrowDown.png", "assets/img/arrowDown.png");
+		type.set ("assets/img/arrowDown.png", AssetType.IMAGE);
+		path.set ("assets/img/arrowUp.png", "assets/img/arrowUp.png");
+		type.set ("assets/img/arrowUp.png", AssetType.IMAGE);
+		path.set ("assets/img/pause.png", "assets/img/pause.png");
+		type.set ("assets/img/pause.png", AssetType.IMAGE);
+		path.set ("assets/Roboto-Thin.ttf", "assets/Roboto-Thin.ttf");
+		type.set ("assets/Roboto-Thin.ttf", AssetType.FONT);
 		
 		
 		#elseif html5
 		
 		var id;
+		id = "assets/arrowDown.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/arrowUp.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/font/Roboto-Thin.ttf";
+		path.set (id, id);
+		type.set (id, AssetType.FONT);
+		id = "assets/img/arrowDown.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/img/arrowUp.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/img/pause.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/Roboto-Thin.ttf";
+		path.set (id, id);
+		type.set (id, AssetType.FONT);
 		
 		
 		#else
@@ -58,9 +93,23 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		Font.registerFont (__ASSET__assets_font_roboto_thin_ttf);
+		
+		
+		
+		Font.registerFont (__ASSET__assets_roboto_thin_ttf);
+		
+		
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
 		
 		
 		if (useManifest) {
@@ -680,8 +729,22 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
+
+
+
+
+
+
 #elseif html5
 
+
+
+@:keep #if display private #end class __ASSET__assets_font_roboto_thin_ttf extends flash.text.Font { #if (!openfl_html5_dom) public function new () { super (); fontName = "assets/font/Roboto-Thin.ttf"; } #end }
+
+
+
+@:keep #if display private #end class __ASSET__assets_roboto_thin_ttf extends flash.text.Font { #if (!openfl_html5_dom) public function new () { super (); fontName = "assets/Roboto-Thin.ttf"; } #end }
 
 
 #else
@@ -692,11 +755,15 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+class __ASSET__assets_font_roboto_thin_ttf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/font/Roboto-Thin.ttf"; fontName = "Roboto Thin"; }}
+class __ASSET__assets_roboto_thin_ttf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/Roboto-Thin.ttf"; fontName = "Roboto Thin"; }}
 
 
 #else
 
 
+class __ASSET__assets_font_roboto_thin_ttf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/font/Roboto-Thin.ttf"; fontName = "Roboto Thin";  }}
+class __ASSET__assets_roboto_thin_ttf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/Roboto-Thin.ttf"; fontName = "Roboto Thin";  }}
 
 
 #end

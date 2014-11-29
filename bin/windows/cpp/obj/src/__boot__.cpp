@@ -56,7 +56,6 @@
 #include <openfl/_v2/text/TextField.h>
 #include <openfl/_v2/text/FontType.h>
 #include <openfl/_v2/text/FontStyle.h>
-#include <openfl/_v2/text/Font.h>
 #include <openfl/_v2/system/ScreenMode.h>
 #include <openfl/_v2/system/PixelFormat.h>
 #include <openfl/_v2/net/URLRequestMethod.h>
@@ -140,16 +139,23 @@
 #include <StringTools.h>
 #include <StringBuf.h>
 #include <Reflect.h>
+#include <Prova.h>
 #include <Platform.h>
 #include <IMap.h>
 #include <Player.h>
 #include <GameState.h>
 #include <List.h>
 #include <Lambda.h>
+#include <__ASSET__assets_roboto_thin_ttf.h>
+#include <__ASSET__assets_font_roboto_thin_ttf.h>
+#include <openfl/_v2/text/Font.h>
 #include <DefaultAssetLibrary.h>
 #include <openfl/_v2/AssetLibrary.h>
 #include <Date.h>
+#include <BottonPause.h>
 #include <Ball.h>
+#include <ArrowUp.h>
+#include <ArrowDown.h>
 #include <DocumentClass.h>
 #include <Main.h>
 #include <openfl/_v2/display/Sprite.h>
@@ -233,7 +239,6 @@ hx::RegisterResources( hx::GetResources() );
 ::openfl::_v2::text::TextField_obj::__register();
 ::openfl::_v2::text::FontType_obj::__register();
 ::openfl::_v2::text::FontStyle_obj::__register();
-::openfl::_v2::text::Font_obj::__register();
 ::openfl::_v2::system::ScreenMode_obj::__register();
 ::openfl::_v2::system::PixelFormat_obj::__register();
 ::openfl::_v2::net::URLRequestMethod_obj::__register();
@@ -317,16 +322,23 @@ hx::RegisterResources( hx::GetResources() );
 ::StringTools_obj::__register();
 ::StringBuf_obj::__register();
 ::Reflect_obj::__register();
+::Prova_obj::__register();
 ::Platform_obj::__register();
 ::IMap_obj::__register();
 ::Player_obj::__register();
 ::GameState_obj::__register();
 ::List_obj::__register();
 ::Lambda_obj::__register();
+::__ASSET__assets_roboto_thin_ttf_obj::__register();
+::__ASSET__assets_font_roboto_thin_ttf_obj::__register();
+::openfl::_v2::text::Font_obj::__register();
 ::DefaultAssetLibrary_obj::__register();
 ::openfl::_v2::AssetLibrary_obj::__register();
 ::Date_obj::__register();
+::BottonPause_obj::__register();
 ::Ball_obj::__register();
+::ArrowUp_obj::__register();
+::ArrowDown_obj::__register();
 ::DocumentClass_obj::__register();
 ::Main_obj::__register();
 ::openfl::_v2::display::Sprite_obj::__register();
@@ -372,16 +384,23 @@ hx::RegisterResources( hx::GetResources() );
 ::openfl::_v2::display::Sprite_obj::__boot();
 ::Main_obj::__boot();
 ::DocumentClass_obj::__boot();
+::ArrowDown_obj::__boot();
+::ArrowUp_obj::__boot();
 ::Ball_obj::__boot();
+::BottonPause_obj::__boot();
 ::Date_obj::__boot();
 ::openfl::_v2::AssetLibrary_obj::__boot();
 ::DefaultAssetLibrary_obj::__boot();
+::openfl::_v2::text::Font_obj::__boot();
+::__ASSET__assets_font_roboto_thin_ttf_obj::__boot();
+::__ASSET__assets_roboto_thin_ttf_obj::__boot();
 ::Lambda_obj::__boot();
 ::List_obj::__boot();
 ::GameState_obj::__boot();
 ::Player_obj::__boot();
 ::IMap_obj::__boot();
 ::Platform_obj::__boot();
+::Prova_obj::__boot();
 ::Reflect_obj::__boot();
 ::StringBuf_obj::__boot();
 ::StringTools_obj::__boot();
@@ -461,7 +480,6 @@ hx::RegisterResources( hx::GetResources() );
 ::openfl::_v2::net::URLRequestMethod_obj::__boot();
 ::openfl::_v2::system::PixelFormat_obj::__boot();
 ::openfl::_v2::system::ScreenMode_obj::__boot();
-::openfl::_v2::text::Font_obj::__boot();
 ::openfl::_v2::text::FontStyle_obj::__boot();
 ::openfl::_v2::text::FontType_obj::__boot();
 ::openfl::_v2::text::TextField_obj::__boot();

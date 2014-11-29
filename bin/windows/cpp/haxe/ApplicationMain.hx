@@ -24,16 +24,13 @@ class ApplicationMain {
 		
 		#if ios
 		flash.display.Stage.shouldRotateInterface = function (orientation:Int):Bool {
-			return (orientation == flash.display.Stage.OrientationLandscapeLeft || orientation == flash.display.Stage.OrientationLandscapeRight);
-			
+			return true;
 		}
 		#end
 		
 		
 		
-		#if tizen
-		flash.display.Stage.setFixedOrientation (flash.display.Stage.OrientationLandscapeRight);
-		#end
+		
 		
 		flash.Lib.create (function () {
 				

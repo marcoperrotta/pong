@@ -6,12 +6,12 @@
     <movie input="" />
     <movie path="application.xml" />
     <movie fps="60" />
-    <movie width="500" />
-    <movie height="500" />
+    <movie width="0" />
+    <movie height="0" />
     <movie version="3" />
     <movie minorVersion="0" />
     <movie platform="NME" />
-    <movie background="333333" />
+    <movie background="#333333" />
     <movie preferredSDK=";3;" />
   </output>
   <!-- Other classes to be compiled into your SWF -->

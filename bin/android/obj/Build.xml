@@ -260,21 +260,6 @@
   <file name="src/openfl/_v2/text/FontStyle.cpp">
    <depend name="include/openfl/_v2/text/FontStyle.h"/>
   </file>
-  <file name="src/openfl/_v2/text/Font.cpp">
-   <depend name="include/Reflect.h"/>
-   <depend name="include/Std.h"/>
-   <depend name="include/Type.h"/>
-   <depend name="include/haxe/Resource.h"/>
-   <depend name="include/haxe/io/Bytes.h"/>
-   <depend name="include/openfl/_v2/Lib.h"/>
-   <depend name="include/openfl/_v2/text/Font.h"/>
-   <depend name="include/openfl/_v2/text/FontStyle.h"/>
-   <depend name="include/openfl/_v2/text/FontType.h"/>
-   <depend name="include/openfl/_v2/utils/ByteArray.h"/>
-   <depend name="include/openfl/_v2/utils/IDataInput.h"/>
-   <depend name="include/openfl/_v2/utils/IDataOutput.h"/>
-   <depend name="include/openfl/_v2/utils/IMemoryRange.h"/>
-  </file>
   <file name="src/openfl/_v2/system/ScreenMode.cpp">
    <depend name="include/openfl/_v2/system/PixelFormat.h"/>
    <depend name="include/openfl/_v2/system/ScreenMode.h"/>
@@ -942,11 +927,40 @@
   <file name="src/Lambda.cpp">
    <depend name="include/Lambda.h"/>
   </file>
+  <file name="src/__ASSET__assets_roboto_thin_ttf.cpp">
+   <depend name="include/__ASSET__assets_roboto_thin_ttf.h"/>
+   <depend name="include/openfl/_v2/text/Font.h"/>
+   <depend name="include/openfl/_v2/text/FontStyle.h"/>
+   <depend name="include/openfl/_v2/text/FontType.h"/>
+  </file>
+  <file name="src/__ASSET__assets_font_roboto_thin_ttf.cpp">
+   <depend name="include/__ASSET__assets_font_roboto_thin_ttf.h"/>
+   <depend name="include/openfl/_v2/text/Font.h"/>
+   <depend name="include/openfl/_v2/text/FontStyle.h"/>
+   <depend name="include/openfl/_v2/text/FontType.h"/>
+  </file>
+  <file name="src/openfl/_v2/text/Font.cpp">
+   <depend name="include/Reflect.h"/>
+   <depend name="include/Std.h"/>
+   <depend name="include/Type.h"/>
+   <depend name="include/haxe/Resource.h"/>
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/openfl/_v2/Lib.h"/>
+   <depend name="include/openfl/_v2/text/Font.h"/>
+   <depend name="include/openfl/_v2/text/FontStyle.h"/>
+   <depend name="include/openfl/_v2/text/FontType.h"/>
+   <depend name="include/openfl/_v2/utils/ByteArray.h"/>
+   <depend name="include/openfl/_v2/utils/IDataInput.h"/>
+   <depend name="include/openfl/_v2/utils/IDataOutput.h"/>
+   <depend name="include/openfl/_v2/utils/IMemoryRange.h"/>
+  </file>
   <file name="src/DefaultAssetLibrary.cpp">
    <depend name="include/DefaultAssetLibrary.h"/>
    <depend name="include/IMap.h"/>
    <depend name="include/Std.h"/>
    <depend name="include/Type.h"/>
+   <depend name="include/__ASSET__assets_font_roboto_thin_ttf.h"/>
+   <depend name="include/__ASSET__assets_roboto_thin_ttf.h"/>
    <depend name="include/haxe/Log.h"/>
    <depend name="include/haxe/Timer.h"/>
    <depend name="include/haxe/Unserializer.h"/>
@@ -995,10 +1009,12 @@
   </file>
   <file name="src/BottonPause.cpp">
    <depend name="include/BottonPause.h"/>
+   <depend name="include/openfl/_v2/Assets.h"/>
    <depend name="include/openfl/_v2/Lib.h"/>
+   <depend name="include/openfl/_v2/display/Bitmap.h"/>
+   <depend name="include/openfl/_v2/display/BitmapData.h"/>
    <depend name="include/openfl/_v2/display/DisplayObject.h"/>
    <depend name="include/openfl/_v2/display/DisplayObjectContainer.h"/>
-   <depend name="include/openfl/_v2/display/Graphics.h"/>
    <depend name="include/openfl/_v2/display/IBitmapDrawable.h"/>
    <depend name="include/openfl/_v2/display/InteractiveObject.h"/>
    <depend name="include/openfl/_v2/display/MovieClip.h"/>
@@ -1006,6 +1022,9 @@
    <depend name="include/openfl/_v2/display/Stage.h"/>
    <depend name="include/openfl/_v2/events/EventDispatcher.h"/>
    <depend name="include/openfl/_v2/events/IEventDispatcher.h"/>
+   <depend name="include/openfl/_v2/text/Font.h"/>
+   <depend name="include/openfl/_v2/text/TextField.h"/>
+   <depend name="include/openfl/display/PixelSnapping.h"/>
   </file>
   <file name="src/Ball.cpp">
    <depend name="include/Ball.h"/>
@@ -1023,10 +1042,12 @@
   </file>
   <file name="src/ArrowUp.cpp">
    <depend name="include/ArrowUp.h"/>
+   <depend name="include/openfl/_v2/Assets.h"/>
    <depend name="include/openfl/_v2/Lib.h"/>
+   <depend name="include/openfl/_v2/display/Bitmap.h"/>
+   <depend name="include/openfl/_v2/display/BitmapData.h"/>
    <depend name="include/openfl/_v2/display/DisplayObject.h"/>
    <depend name="include/openfl/_v2/display/DisplayObjectContainer.h"/>
-   <depend name="include/openfl/_v2/display/Graphics.h"/>
    <depend name="include/openfl/_v2/display/IBitmapDrawable.h"/>
    <depend name="include/openfl/_v2/display/InteractiveObject.h"/>
    <depend name="include/openfl/_v2/display/MovieClip.h"/>
@@ -1034,13 +1055,16 @@
    <depend name="include/openfl/_v2/display/Stage.h"/>
    <depend name="include/openfl/_v2/events/EventDispatcher.h"/>
    <depend name="include/openfl/_v2/events/IEventDispatcher.h"/>
+   <depend name="include/openfl/display/PixelSnapping.h"/>
   </file>
   <file name="src/ArrowDown.cpp">
    <depend name="include/ArrowDown.h"/>
+   <depend name="include/openfl/_v2/Assets.h"/>
    <depend name="include/openfl/_v2/Lib.h"/>
+   <depend name="include/openfl/_v2/display/Bitmap.h"/>
+   <depend name="include/openfl/_v2/display/BitmapData.h"/>
    <depend name="include/openfl/_v2/display/DisplayObject.h"/>
    <depend name="include/openfl/_v2/display/DisplayObjectContainer.h"/>
-   <depend name="include/openfl/_v2/display/Graphics.h"/>
    <depend name="include/openfl/_v2/display/IBitmapDrawable.h"/>
    <depend name="include/openfl/_v2/display/InteractiveObject.h"/>
    <depend name="include/openfl/_v2/display/MovieClip.h"/>
@@ -1048,6 +1072,7 @@
    <depend name="include/openfl/_v2/display/Stage.h"/>
    <depend name="include/openfl/_v2/events/EventDispatcher.h"/>
    <depend name="include/openfl/_v2/events/IEventDispatcher.h"/>
+   <depend name="include/openfl/display/PixelSnapping.h"/>
   </file>
   <file name="src/DocumentClass.cpp">
    <depend name="include/DocumentClass.h"/>
@@ -1073,6 +1098,7 @@
    <depend name="include/Platform.h"/>
    <depend name="include/Player.h"/>
    <depend name="include/Prova.h"/>
+   <depend name="include/openfl/_v2/Assets.h"/>
    <depend name="include/openfl/_v2/Lib.h"/>
    <depend name="include/openfl/_v2/display/CapsStyle.h"/>
    <depend name="include/openfl/_v2/display/DisplayObject.h"/>
@@ -1092,6 +1118,7 @@
    <depend name="include/openfl/_v2/events/MouseEvent.h"/>
    <depend name="include/openfl/_v2/events/TouchEvent.h"/>
    <depend name="include/openfl/_v2/geom/Point.h"/>
+   <depend name="include/openfl/_v2/text/Font.h"/>
    <depend name="include/openfl/_v2/text/TextField.h"/>
    <depend name="include/openfl/_v2/text/TextFormat.h"/>
    <depend name="include/openfl/_v2/text/TextFormatAlign.h"/>

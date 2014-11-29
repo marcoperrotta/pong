@@ -36,6 +36,8 @@ class HXCPP_CLASS_ATTRIBUTES  Platform_obj : public ::openfl::_v2::display::Spri
 		static void __register();
 		::String __ToString() const { return HX_CSTRING("Platform"); }
 
+		int larg;
+		Float alt;
 };
 
 

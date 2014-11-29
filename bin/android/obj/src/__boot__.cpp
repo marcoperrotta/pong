@@ -54,7 +54,6 @@
 #include <openfl/_v2/text/TextField.h>
 #include <openfl/_v2/text/FontType.h>
 #include <openfl/_v2/text/FontStyle.h>
-#include <openfl/_v2/text/Font.h>
 #include <openfl/_v2/system/ScreenMode.h>
 #include <openfl/_v2/system/PixelFormat.h>
 #include <openfl/_v2/net/URLRequestMethod.h>
@@ -144,6 +143,9 @@
 #include <GameState.h>
 #include <List.h>
 #include <Lambda.h>
+#include <__ASSET__assets_roboto_thin_ttf.h>
+#include <__ASSET__assets_font_roboto_thin_ttf.h>
+#include <openfl/_v2/text/Font.h>
 #include <DefaultAssetLibrary.h>
 #include <openfl/_v2/AssetLibrary.h>
 #include <Date.h>
@@ -232,7 +234,6 @@ hx::RegisterResources( hx::GetResources() );
 ::openfl::_v2::text::TextField_obj::__register();
 ::openfl::_v2::text::FontType_obj::__register();
 ::openfl::_v2::text::FontStyle_obj::__register();
-::openfl::_v2::text::Font_obj::__register();
 ::openfl::_v2::system::ScreenMode_obj::__register();
 ::openfl::_v2::system::PixelFormat_obj::__register();
 ::openfl::_v2::net::URLRequestMethod_obj::__register();
@@ -322,6 +323,9 @@ hx::RegisterResources( hx::GetResources() );
 ::GameState_obj::__register();
 ::List_obj::__register();
 ::Lambda_obj::__register();
+::__ASSET__assets_roboto_thin_ttf_obj::__register();
+::__ASSET__assets_font_roboto_thin_ttf_obj::__register();
+::openfl::_v2::text::Font_obj::__register();
 ::DefaultAssetLibrary_obj::__register();
 ::openfl::_v2::AssetLibrary_obj::__register();
 ::Date_obj::__register();
@@ -381,6 +385,9 @@ hx::RegisterResources( hx::GetResources() );
 ::Date_obj::__boot();
 ::openfl::_v2::AssetLibrary_obj::__boot();
 ::DefaultAssetLibrary_obj::__boot();
+::openfl::_v2::text::Font_obj::__boot();
+::__ASSET__assets_font_roboto_thin_ttf_obj::__boot();
+::__ASSET__assets_roboto_thin_ttf_obj::__boot();
 ::Lambda_obj::__boot();
 ::List_obj::__boot();
 ::GameState_obj::__boot();
@@ -466,7 +473,6 @@ hx::RegisterResources( hx::GetResources() );
 ::openfl::_v2::net::URLRequestMethod_obj::__boot();
 ::openfl::_v2::system::PixelFormat_obj::__boot();
 ::openfl::_v2::system::ScreenMode_obj::__boot();
-::openfl::_v2::text::Font_obj::__boot();
 ::openfl::_v2::text::FontStyle_obj::__boot();
 ::openfl::_v2::text::FontType_obj::__boot();
 ::openfl::_v2::text::TextField_obj::__boot();

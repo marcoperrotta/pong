@@ -76,20 +76,20 @@ class ApplicationMain {
 			borderless: false,
 			depthBuffer: false,
 			fps: Std.int (60),
-			fullscreen: false,
-			height: Std.int (500),
+			fullscreen: true,
+			height: Std.int (0),
 			orientation: "",
 			resizable: true,
 			stencilBuffer: false,
 			title: "pongame",
 			vsync: false,
-			width: Std.int (500),
+			width: Std.int (0),
 			
 		}
 		
 		#if js
 		#if munit
-		flash.Lib.embed (null, 500, 500, "333333");
+		flash.Lib.embed (null, 0, 0, "333333");
 		#end
 		#else
 		create ();
